@@ -1,0 +1,38 @@
+[
+  {
+    "result":"Leather strap",
+    "requirements": [
+      {"item":"leather", "amount":3}
+    ]
+  },
+  {
+    "result":"Leather",
+    "requirements": [
+      {"item":"raw flesh", "amount":1},
+      {"item":"magic potion", "amount":1},
+      {"item":"sirens tear", "amount":1}
+    ]
+  },
+  {
+    "result":"Necronomicon",
+    "requirements":[
+      {"item":"Ectoplasma", "amount":1},
+      {"item":"Spell book", "amount":1}
+    ]
+  },
+  {
+    "result":"Spell book",
+    "requirements":[
+      {"item":"Sirens tear", "amount":1},
+      {"item":"Necronomicon", "amount":1}
+    ]
+  },
+  {
+    "result":"Bee queen",
+    "requirements":[
+      {"item":"Essence of life", "amount":1},
+      {"item":"Honey", "amount":5}
+    ]
+  }
+
+]

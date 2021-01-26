@@ -1,0 +1,43 @@
+[
+  {
+    "name": "backpack",
+    "levels": [
+      {
+        "lvl":2,
+        "storage":15,
+        "price":1000,
+        "items":[
+          {"name":"Leather Strap", "amount":2},
+          {"name":"Leather", "amount":1}
+        ]
+      },
+      {
+        "lvl":3,
+        "storage":25,
+        "price":3000,
+        "items":[
+          {"name":"Leather Strap", "amount":2},
+          {"name":"Leather", "amount":2}
+        ]
+      },
+      {
+        "lvl":4,
+        "storage":50,
+        "price":6000,
+        "items":[
+          {"name":"Leather Strap", "amount":4},
+          {"name":"Leather", "amount":4}
+        ]
+      },
+      {
+        "lvl":5,
+        "storage":100,
+        "price":12000,
+        "items":[
+          {"name":"Leather Strap", "amount":4},
+          {"name":"Leather", "amount":7}
+        ]
+      }
+    ]
+  }
+]

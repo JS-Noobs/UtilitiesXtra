@@ -1,0 +1,221 @@
+[
+  {
+   "name":"**Wild Hog**",
+   "kill":65,
+   "color":"RED",
+   "desc":"A wild hog is an animal that is known for destruction and random behavior",
+   "drops":[
+     {"name":"Raw flesh", "rarity":65},
+     {"name":"Leather", "rarity":20}
+   ] 
+  },
+  {
+    "name":"**Ogre**",
+    "kill":35,
+    "color":"RED",
+    "desc":"The Ogre is a beast feared by all of manking they are known for their ruthless behavior",
+    "drops":[
+      {"name":"Raw flesh", "rarity":80},
+      {"name":"Leather", "rarity":35},
+      {"name":"Iron ring", "rarity":5},
+      {"name":"Gold ring", "rarity":1}
+    ]
+  },
+  {
+    "name":"**Wolf**",
+    "kill":50,
+    "color":"BLUE",
+    "desc":"A wolf is a wild animal they often travel in a pack and can become a great companion",
+    "drops":[
+      {"name":"Fur", "rarity":75},
+      {"name":"Wolfs tooth", "rarity":20},
+      {"name":"Wolfs claw", "rarity":13}
+    ]
+  },
+  {
+    "name":"**Bee Swarm**",
+    "kill":30,
+    "color":"RED",
+    "desc":"A swarm of bees, watch out for their poisionous stings. The bee swarm is often led by a queen",
+    "drops":[
+      {"name":"Honey", "rarity":15},
+      {"name":"Bee queen", "rarity":3}
+    ]
+  },
+  {
+    "name":"**Ghost**",
+    "kill":40,
+    "color":"RED",
+    "desc":"A ghost, a dead creature that has came back to the world of living to haunt people on its travels.",
+    "drops":[
+      {"name":"Ectoplasma", "rarity":30},
+      {"name":"Jar o' boo", "rarity":1}
+    ]
+  },
+  {
+    "name":"**Knight**",
+    "kill":35,
+    "color":"BLUE",
+    "desc":"A knight from the nearby kingdom, great warriors their also very skilled.",
+    "drops":[
+      {"name":"Gold coin", "rarity":10},
+      {"name":"Iron ring", "rarity":5}
+    ]
+  },
+  {
+    "name":"**Cow**",
+    "kill":90,
+    "color":"GREEN",
+    "desc":"A cow, its a peaceful animal roaming the realms.",
+    "drops":[
+      {"name":"Leather", "rarity":80},
+      {"name":"Raw flesh", "rarity":60}
+    ]
+  },
+  {
+    "name":"**Siren**",
+    "kill":35,
+    "color":"RED",
+    "desc":"A siren is most commonly found in the ocean but can sometimes be found in bigger water filled areas. They kill their victims by drowning after luring them with their beautiful voice",
+    "drops":[
+      {"name":"Sirens tear", "rarity":50},
+      {"name":"Sirens fin", "rarity":10}
+    ]
+  },
+  {
+    "name":"**Bandit**",
+    "kill":45,
+    "color":"RED",
+    "desc":"A bandit, they roam everywhere in the realm altho their not very clever they should be not be treated as fools",
+    "drops":[
+      {"name":"Gunpowder", "rarity":25},
+      {"name":"Gold coin", "rarity":3}
+    ]
+  },
+  {
+    "name":"**Witch**",
+    "kill":15,
+    "color":"RED",
+    "desc":"Altho they may look like an innocent old lady the witch is a very dark and powerful being known for their spells",
+    "drops":[
+      {"name":"Spell book", "rarity":2},
+      {"name":"Magic potion", "rarity":60}
+    ]
+  },
+  {
+    "name":"**Necromancer**",
+    "kill":15,
+    "color":"RED",
+    "desc":"The necromancers comes from a dark place unknown to man. They are known for their dark and bringing dead things back to life",
+    "drops":[
+      {"name":"Necronomicon", "rarity":2},
+      {"name":"Magic potion", "rarity":60}
+    ]
+  },
+  {
+    "name":"**Stone Golem**",
+    "kill":25,
+    "color":"RED",
+    "desc":"A stone golem is a big creature made out of stone. It was brought to life by a necromancer to fulfill their deeds",
+    "drops":[
+      {"name":"Amulet of Earth", "rarity":10},
+      {"name":"Essence of life", "rarity":1}
+    ]
+  },
+  {
+    "name":"**Fire Golem**",
+    "kill":25,
+    "color":"RED",
+    "desc":"A fire golem is a big creature made out of stone and fire. It was brought to life by a necromancer to fulfill their deeds",
+    "drops":[
+      {"name":"Amulet of Fire", "rarity":10},
+      {"name":"Essence of life", "rarity":1}
+    ]
+  },
+  {
+    "name":"**Water Golem**",
+    "kill":25,
+    "color":"RED",
+    "desc":"A water golem is a big creature made out of stone and water. It was brought to life by a necromancer to fulfill their deeds",
+    "drops":[
+      {"name":"Amulet of Water", "rarity":10},
+      {"name":"Essence of life", "rarity":1}
+    ]
+  },
+  {
+    "name":"**Nature Golem**",
+    "kill":25,
+    "color":"RED",
+    "desc":"A nature golem is a big creature made out of stone and wood. It was brought to life by a necromancer to fulfill their deeds",
+    "drops":[
+      {"name":"Amulet of Nature", "rarity":10},
+      {"name":"Essence of life", "rarity":1}
+    ]
+  },
+  {
+    "name":"**Demon**",
+    "kill":30,
+    "color":"RED",
+    "desc":"A demon is a being that has been summoned by the necromancers. The demons however are not to be fooled with as their dark beings seek revenge on the one who summoned them and will kill anything in its way.",
+    "drops":[
+      {"name":"Essence of afterlife", "rarity":1},
+      {"name":"Soul coin", "rarity":5},
+      {"name":"Amulet of Death", "rarity":10}
+    ]
+  },
+  {
+    "name":"**Wraith**",
+    "kill":10,
+    "color":"RED",
+    "desc":"A wraith much like a demon was summoned by necromancers. The wraith has much in common with demons in seeking revenge. A clear difference from the demon is that the wraith is followed by destruction of anything that have come close to it",
+    "drops":[
+      {"name":"Essence of afterlife", "rarity":1},
+      {"name":"Amulet of Destruction", "rarity":5},
+      {"name":"Soul coin", "rarity":5}
+    ]
+  },
+  {
+    "name":"**Giant**",
+    "kill":20,
+    "color":"RED",
+    "desc":"A giant is a humoungus humanoid creature said to be living in the clouds. Their presence in our realm is not known but it will kill anything it spots.",
+    "drops":[
+      {"name":"Golden egg", "rarity":15}
+    ]
+  },
+  {
+    "name":"**Slime**",
+    "kill":60,
+    "color":"RED",
+    "desc":"A gooey creature summoned by witches, while they are brainless creatures they should not be an exception to fool around with as they can kill anything by swallowing them whole.",
+    "drops":[
+      {"name":"Slime", "rarity":100},
+      {"name":"Iron ring", "rarity":5},
+      {"name":"Fur", "rarity":35},
+      {"name":"Magic potion", "rarity":45} 
+    ]
+  },
+  {
+    "name":"**Goblin**",
+    "kill":45,
+    "color":"BLUE",
+    "desc":"A small creature much alike a troll, they keep hidden in the shadows and takes a special liking to gold",
+    "drops":[
+      {"name":"Gold coin", "rarity":23},
+      {"name":"Gold ring", "rarity":3},
+      {"name":"Golden egg", "rarity":20}
+    ],
+    "user":"Aneez#8889"
+  },
+  {
+    "name":"**Reaper**",
+    "kill":28,
+    "color":"RED",
+    "desc":"A servant to Death himself. They are the collectors of souls. Their presence in the realms are unknown but sudden coldness and decaying life has been found in its trail. It is a very hostile creature and is not to be messed with. It has even been known to kill to gather souls.",
+    "drops":[
+      {"name":"Soul coin", "rarity":10},
+      {"name":"Decayed soul", "rarity":2}
+    ],
+    "user":"Aneez#8889"
+  }
+]

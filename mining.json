@@ -1,0 +1,64 @@
+[
+  {
+    "mine":"Cavern",
+    "miner":1,
+    "ores":[
+      {"name":"Stone", "level":1},
+      {"name":"Iron", "level":5},
+      {"name":"Amethyst", "level":1000}
+    ]
+  },
+  {
+    "mine":"Deep Cavern",
+    "miner":10,
+    "ores":[
+      {"name":"Stone", "level":1},
+      {"name":"Iron", "level":5},
+      {"name":"Copper", "level":15},
+      {"name":"Amethyst", "level":1000},
+      {"name":"Ruby", "level":1500}
+    ]
+  },
+  {
+    "mine":"Mineshaft",
+    "miner":25,
+    "ores":[
+      {"name":"Stone", "level":1},
+      {"name":"Iron", "level":5},
+      {"name":"Copper", "level":15},
+      {"name":"Gold", "level":50},
+      {"name":"Amethyst", "level":1000},
+      {"name":"Ruby", "level":1500},
+      {"name":"Emerald", "level":3000}
+    ]
+  },
+  {
+    "mine":"Enchanted Mineshaft",
+    "miner":60,
+    "ores":[
+      {"name":"Stone", "level":1},
+      {"name":"Iron", "level":5},
+      {"name":"Copper", "level":15},
+      {"name":"Gold", "level":50},
+      {"name":"Litz", "level":80},
+      {"name":"Amethyst", "level":1000},
+      {"name":"Ruby", "level":1500},
+      {"name":"Emerald", "level":3000}
+    ]
+  },
+  {
+    "mine":"Dwarf Mines",
+    "miner":200,
+    "ores":[
+      {"name":"Stone", "level":1},
+      {"name":"Iron", "level":5},
+      {"name":"Copper", "level":15},
+      {"name":"Gold", "level":50},
+      {"name":"Litz", "level":80},
+      {"name":"Qlead", "level":150},
+      {"name":"Amethyst", "level":1000},
+      {"name":"Ruby", "level":1500},
+      {"name":"Emerald", "level":3000}
+    ]
+  }
+]

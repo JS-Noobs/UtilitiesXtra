@@ -1,0 +1,242 @@
+[
+  {
+    "name":"Leather",
+    "buy":"NFS",
+    "sell":50,
+    "desc":"A uncommon drop from animal and armored monsters"
+  },
+  {
+    "name":"Leather strap",
+    "buy":"NFS",
+    "sell":150,
+    "desc":"A strap made out of leather, it can probably keep things strapped together"
+  },
+  {
+    "name":"Raw flesh",
+    "buy":"-",
+    "sell":20,
+    "desc":"A common drop from animal monsters"
+  },
+  {
+    "name":"Iron ring",
+    "buy":"NFS",
+    "sell":500,
+    "desc":"A iron ring rarely found on humanoid monsters"
+  },
+  {
+    "name":"Gold ring",
+    "buy":"NFS",
+    "sell":2000,
+    "desc":"A gold ring very rarely found on ogres"
+  },
+  {
+    "name":"Fur",
+    "buy":"-",
+    "sell":100,
+    "desc":"Fur uncommon item found on some animal monsters"
+  },
+  {
+    "name":"Wolfs tooth",
+    "buy":"-",
+    "sell":175,
+    "desc":"A wolfs tooth commonly found on wolfs"
+  },
+  {
+    "name":"Honey",
+    "buy":"-",
+    "sell":250,
+    "desc":"Honey, yummmy"
+  },
+  {
+    "name":"Bee queen",
+    "buy":"NFS",
+    "sell":750,
+    "desc":"A bee queen pretty rare."
+  },
+  {
+    "name":"Wolfs claw",
+    "buy":"-",
+    "sell":225,
+    "desc":"A claw taken from a wolf"
+  },
+  {
+    "name":"Ectoplasma",
+    "buy":"NFS",
+    "sell":35,
+    "desc":"A ghostly substance very slimey"
+  },
+  {
+    "name":"Jar o' boo",
+    "buy":"NFS",
+    "sell":500,
+    "desc":"A jar filled with Boo? How can a jar be filled with a word?"
+  },
+  {
+    "name":"Gold coin",
+    "buy":"-",
+    "sell":100,
+    "desc":"A gold coin, shiny."
+  },
+  {
+    "name":"Sirens tear",
+    "buy":"NFS",
+    "sell":25,
+    "desc":"A tear from a siren it is said to have healing properties."
+  },
+  {
+    "name":"Sirens fin",
+    "buy":"NFS",
+    "sell":75,
+    "desc":"A fin from a Siren, getting this cant have been easy."
+  },
+  {
+    "name":"Gunpowder",
+    "buy":"-",
+    "sell":80,
+    "desc":"A black powder, highly explosive."
+  },
+  {
+    "name":"Spell book",
+    "buy":"NFS",
+    "sell":450,
+    "desc":"A boog with a lot of magical spells, powerful ones too."
+  },
+  {
+    "name":"Magic potion",
+    "buy":25,
+    "sell":10,
+    "desc":"A magical potion, wonder what it does."
+  },
+  {
+    "name":"Necronomicon",
+    "buy":"NFS",
+    "sell":450,
+    "desc":"A necronomicon, it's a very powerful and a very dark book."
+  },
+  {
+    "name":"Amulet of Earth",
+    "buy":"NFS",
+    "sell":250,
+    "desc":"The Amulet of Earth. Stories say that whoever wears the amulet wields the power of Earth"
+  },
+  {
+    "name":"Amulet of Fire",
+    "buy":"NFS",
+    "sell":250,
+    "desc":"The Amulet of Fire. Stories say that whoever wears the amulet wields the power of Fire"
+  },
+  {
+    "name":"Amulet of Water",
+    "buy":"NFS",
+    "sell":250,
+    "desc":"The Amulet of Water. Stories say that whoever wears the amulet wields the power of Water"
+  },
+  {
+    "name":"Amulet of Nature",
+    "buy":"NFS",
+    "sell":250,
+    "desc":"The Amulet of Nature. Stories say that whoever wears the amulet wields the power of Nature"
+  },
+  {
+    "name":"Essence of life",
+    "buy":"NFS",
+    "sell":3000,
+    "desc":"Essence of life, stories says that this can bring any dead thing to life."
+  },
+  {
+    "name":"Essence of afterlife",
+    "buy":"NFS",
+    "sell":3000,
+    "desc":"Essence of afterlife, stories says that this can kill any living thing in an instant."
+  },
+  {
+    "name":"Soul coin",
+    "buy":"NFS",
+    "sell":500,
+    "desc":"A soul coin, its said that whoever owns them have control over the soul its connected to."
+  },
+  {
+    "name":"Amulet of Death",
+    "buy":"NFS",
+    "sell":250,
+    "desc":"The Amulet of Death. Stories say that whoever wears the amulet wields the power of death."
+  },
+  {
+    "name":"Amulet of Destruction",
+    "buy":"NFS",
+    "sell":250,
+    "desc":"The Amulet of Destruction. Stories say that whoever wears the amulet wields the power of destruction."
+  },
+  {
+    "name":"Golden egg",
+    "buy":"NFS",
+    "sell":300,
+    "desc":"A golden egg, this can be very valuable to some"
+  },
+  {
+    "name":"Slime",
+    "buy":"-",
+    "sell":5,
+    "desc":"A gooey substance taken from a dead slime, not very useful"
+  },
+  {
+    "name":"Decayed soul",
+    "buy":"NFS",
+    "sell":1000,
+    "desc":"On its way to become a soul coin, decayed souls are often accompanied by reapers"
+  },
+  {
+    "name":"Stone",
+    "buy":"NFS",
+    "sell":50,
+    "desc":"Stone gathered from the mines"
+  },
+  {
+    "name":"Iron",
+    "buy":"NFS",
+    "sell":75,
+    "desc":"Iron gathered from the mines"
+  },
+  {
+    "name":"Copper",
+    "buy":"NFS",
+    "sell":100,
+    "desc":"Copper gathered from the mines"
+  },
+  {
+    "name":"Gold",
+    "buy":"NFS",
+    "sell":125,
+    "desc":"Gold gathered from the mines"
+  },
+  {
+    "name":"Litz",
+    "buy":"NFS",
+    "sell":150,
+    "desc":"An ore filled with magic"
+  },
+  {
+    "name":"Qlead",
+    "buy":"NFS",
+    "sell":175,
+    "desc":"A mystical ore"
+  },
+  {
+    "name":"Amethyst",
+    "buy":"NFS",
+    "sell":200,
+    "desc":"A gem gathered in the mines"
+  },
+  {
+    "name":"Ruby",
+    "buy":"NFS",
+    "sell":225,
+    "desc":"A gem gathered in the mines"
+  },
+  {
+    "name":"Emerald",
+    "buy":"NFS",
+    "sell":250,
+    "desc":"A gem gathered in the mines"
+  }
+]
