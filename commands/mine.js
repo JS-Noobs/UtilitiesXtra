@@ -189,8 +189,8 @@ module.exports = {
 				};
 				const bonus = (client.stats.get(key, 'mining') * 25) / 100;
 				
-				client.miner.math(key, '+', 1000*x.amount*bonus, 'xp');
-				client.miner.math(key, '+', 1000*x.amount*bonus, 'totalXp');
+				client.miner.math(key, '+', 1000*x.amount, 'xp');
+				client.miner.math(key, '+', 1000*x.amount, 'totalXp');
 				client.miner.remove(key, y => y.name === x.name, 'trolley');
 			});
 			let xp = client.miner.get(key, 'xp');
