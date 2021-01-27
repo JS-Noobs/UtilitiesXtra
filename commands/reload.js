@@ -5,7 +5,7 @@ module.exports = {
 	name: 'reload',
   alias: [],
 	description: 'reload',
-  category: 'usersettings',
+  category: 'development',
   permissions: [],
   botpermissions: [],
   development: true,
@@ -22,10 +22,17 @@ module.exports = {
     try {
 	    const newCommand = require(`./${command.name}.js`);
 	    message.client.commands.set(newCommand.name, newCommand);
-      message.channel.send(`Command ${command.name} was reloaded`);
+			const embed = new MessageEmbed()
+			.setTitle(`The command ${command.name} was successfully reloaded`)
+			.setColor(`BLUE`)
+      message.channel.send(embed);
     } catch (error) {
 	    console.error(error);
-	    message.channel.send(`\`${error.message}\``);
+			const embed = new MessageEmbed()
+			.setTitle(`ERROR`)
+			.setDescription(error.message)
+			.setColor(`ORANGE`)
+	    message.channel.send(embed);
     };
   },
 };
