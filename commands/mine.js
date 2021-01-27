@@ -88,12 +88,13 @@ module.exports = {
       const msg = await message.channel.send(embed);
       await client.setTimeout(() => {
         const emb = msg.embeds[0];
-				if(ore.level < client.miner.get(key, 'pickaxe')){
+				if(ore.level <= client.miner.get(key, 'pickaxe')){
         	emb.setTitle(`You found ${ore.name.toLowerCase()} in the mines`)
         	.setDescription(`You require a pickaxe of level ${ore.level} to mine this ore, your current pickaxe level is ${client.miner.get(key, 'pickaxe')}.`)
         	.setColor('BLUE')
         	return msg.edit(emb)
-				} else {
+				} else if(ore.level > client.miner.get(key, 'pickaxe')){
+					console.log(ore.name+' '+ore.level)
 					client.miner.set(key, '', 'ore');
 					emb.setTitle(`You found nothing of interest in the mines`)
 					.setColor('ORANGE')
