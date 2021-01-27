@@ -38,7 +38,8 @@ client.warning = new Enmap({name: 'warning'});
 client.jobs = new Enmap({name: 'jobs'});
 client.adventure = new Enmap({name: 'adventure'});
 client.votechannels = new Enmap({name: 'votechannels'});
-client.miner = new Enmap({name: 'miner'})
+client.miner = new Enmap({name: 'miner'});
+client.messages = new Enmap({name: 'messages'});
 //==========================================================//
 client.globaleco = new Enmap({name: 'globaleco'});
 //==========================================================//
