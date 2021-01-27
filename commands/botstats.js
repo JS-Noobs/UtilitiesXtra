@@ -28,16 +28,16 @@ module.exports = {
     		cpuUsage = Math.round(100 * cpu.times[type] / total);
     	};
 		};
-    const totalMem = os.totalmem();
-    const freeMem = os.freemem();
+    const totalMem = os.totalmem() / 1000000;
+    const freeMem = os.freemem() / 1000000;
     const percent = ((totalMem/freeMem) / 100).toFixed(2);
     const embed = new MessageEmbed()
     .setTitle('Bot statistics')
     .addField('CPU Usage', `${cpuUsage}%`, true)
     .addField('\u200b', '\u200b', true)
     .addField('\u200b', '\u200b', true)
-    .addField('Total Memory', totalMem, true)
-    .addField('Free Memory', freeMem, true)
+    .addField('Total Memory', totalMem+'MB', true)
+    .addField('Free Memory', freeMem+'MB', true)
     .addField('Memory Used', percent, true)
     
     message.channel.send(embed)
