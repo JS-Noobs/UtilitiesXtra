@@ -94,7 +94,7 @@ module.exports = async (client, message) => {
   const key = `${message.guild.id}-${message.member.id}`;
 	const date = new Date();
 	const nextDay = date.setDate(date.getDate() + 1);
-	const msDate = Date.parse(nextDay);
+	const msDate = parseInt(Date.parse(nextDay));
 	client.messages.ensure(key, {
 		total: 0,
 		nextDay: msDate,
