@@ -104,6 +104,8 @@ module.exports = async (client, message) => {
 		total: 0,
 		nextDay: 0,
 		dailyMessages: 0,
+		member: message.member.id,
+		guild: message.guild.id
 	});
 	client.messages.inc(key, 'total');
 	client.messages.inc(key, 'dailyMessages')
