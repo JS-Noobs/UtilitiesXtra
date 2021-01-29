@@ -92,7 +92,8 @@ module.exports = {
         	emb.setTitle(`You found ${ore.name.toLowerCase()} in the mines`)
         	.setDescription(`You require a pickaxe of level ${ore.level} to mine this ore, your current pickaxe level is ${client.miner.get(key, 'pickaxe')}.`)
         	.setColor('BLUE')
-        	return msg.edit(emb)
+        	msg.delete({timeout: 1});
+					message.channel.send(emb);
 				} else if(ore.level > client.miner.get(key, 'pickaxe')){
 					console.log(ore.name+' '+ore.level)
 					client.miner.set(key, '', 'ore');
@@ -174,6 +175,7 @@ module.exports = {
       };
     } else if(args[0] === 'exit') {
 			let curAmt = 0;
+			client.inventory.set(key, '', 'mine');
 			client.inventory.get(key, 'items').forEach(x => curAmt += x.amount);
 			const arr = [];
 			client.miner.get(key, 'trolley').forEach(x => {
