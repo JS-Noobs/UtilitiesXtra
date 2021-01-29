@@ -92,10 +92,20 @@ module.exports = async (client, message) => {
   });
 
   const key = `${message.guild.id}-${message.member.id}`;
+	const date = new Date();
+	const nextDay = date.setDate(date.getDate() + 1);
+	const msDate = Date.parse(nextDay);
 	client.messages.ensure(key, {
-		total: 0
+		total: 0,
+		nextDay: msDate,
+		dailyMessages: 0,
 	});
 	client.messages.inc(key, 'total');
+	client.messages.inc(key, 'dailyMessages')
+	if(client.messages.get(key, 'nextDay') >= Date.parse(date) {
+		client.messages.set(key, msDate, 'nextDay')
+		client.messages.set(key, 0, 'dailyMessages')
+	};
   client.miner.ensure(key, {
     miner: 1,
     totalMiner: 1,
