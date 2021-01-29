@@ -92,6 +92,10 @@ module.exports = async (client, message) => {
   });
 
   const key = `${message.guild.id}-${message.member.id}`;
+	client.messages.ensure(key, {
+		total: 0
+	});
+	client.messages.inc(key, 'total');
   client.miner.ensure(key, {
     miner: 1,
     totalMiner: 1,
