@@ -176,7 +176,7 @@ module.exports = {
       };
     } else if(args[0] === 'exit') {
 			let curAmt = 0;
-			client.inventory.set(key, '', 'mine');
+			client.miner.set(key, '', 'mine');
 			client.inventory.get(key, 'items').forEach(x => curAmt += x.amount);
 			const arr = [];
 			client.miner.get(key, 'trolley').forEach(x => {
@@ -206,7 +206,7 @@ module.exports = {
 			};
 			const embed = new MessageEmbed()
 			.setTitle(`Items collected`)
-			.setDescription(arr.map(x => `${x.amount}- ${x.name}`))
+			.setDescription(arr.map(x => `${x.amount} - ${x.name}`))
 			.setColor('BLUE')
 			return message.channel.send(embed);
     } else {
