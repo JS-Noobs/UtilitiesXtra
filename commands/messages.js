@@ -18,7 +18,7 @@ module.exports = {
 		const curDate = new Date()
 		const date = new Date()
 		const nextDay = new Date(client.messages.get(key, 'nextDay'));
-		const msLeft = ms(nextDay-curDate)
+		const msLeft = ms(nextDay-curDate, {secondsDecimalDigits: 0, millisecondsDecimalDigits: 0})
     const embed = new MessageEmbed()
     .setDescription(`Total messages: ${client.messages.get(key, 'total')}\nDaily messages: ${client.messages.get(key, 'dailyMessages')}`)
 		.setFooter(`${msLeft} until daily reset`)
