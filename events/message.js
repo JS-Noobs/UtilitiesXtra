@@ -103,7 +103,7 @@ module.exports = async (client, message) => {
 	});
 	client.messages.inc(key, 'total');
 	client.messages.inc(key, 'dailyMessages')
-	if(client.messages.get(key, 'nextDay' === 0)) client.messages.set(key, msDate, 'nextDay')
+	if(client.messages.get(key, 'nextDay') === 0) client.messages.set(key, msDate, 'nextDay')
 	if(client.messages.get(key, 'nextDay') >= Date.parse(date)) {
 		client.messages.set(key, msDate, 'nextDay')
 		client.messages.set(key, 0, 'dailyMessages')
