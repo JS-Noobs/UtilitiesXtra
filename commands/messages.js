@@ -17,7 +17,7 @@ module.exports = {
     const key = `${message.guild.id}-${message.member.id}`;
 		const curDate = new Date()
 		const date = new Date()
-		const nextDay = new Date(date.setDate(date.getDate()+1));
+		const nextDay = new Date(client.messages.get(key, 'nextDay'));
 		const msLeft = ms(nextDay-curDate)
     const embed = new MessageEmbed()
     .setDescription(`Total messages: ${client.messages.get(key, 'total')}\nDaily messages: ${client.messages.get(key, 'dailyMessages')}`)
