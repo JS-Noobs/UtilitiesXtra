@@ -52,7 +52,7 @@ module.exports = {
       const trolley = client.miner.get(key, 'trolley').length;
       const max = client.miner.get(key, 'maxTrolley');
       const mine = mines.find(x => x.mine === client.miner.get(key, 'mine'));
-      if(!mine) return message.channel.send(`You are not currently in a mine`);
+      if(!mine) return message.channel.send(new MessageEmbed().setTitle(`You are not currently in a mine`).setColor('ORANGE'));
       let ore = mine.ores.find(x => x.name === client.miner.get(key, 'ore'));
       if(!ore) ore = {name:'You havent found any ore yet, search the mine to find them!'}
       const embed = new MessageEmbed()
