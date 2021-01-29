@@ -99,7 +99,8 @@ module.exports = {
 					client.miner.set(key, '', 'ore');
 					emb.setTitle(`You found nothing of interest in the mines`)
 					.setColor('ORANGE')
-					return msg.edit(emb);
+					msg.delete({timeout: 1});
+					return message.channel.send(emb)
 				};
       }, 5000);
       search.add(message.member.id);
