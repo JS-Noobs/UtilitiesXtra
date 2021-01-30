@@ -110,10 +110,12 @@ module.exports = async (client, message) => {
 	client.messages.inc(key, 'total');
 	client.messages.inc(key, 'dailyMessages')
 	if(client.messages.get(key, 'nextDay') === 0) client.messages.set(key, msDate, 'nextDay')
-	if(client.messages.get(x, 'nextDay') <= Date.parse(date)) {
-		client.messages.set(key, msDate, 'nextDay')
-		client.messages.set(key, 0, 'dailyMessages')
-	};
+	client.messages.forEach((v,k,e) => {
+		if(client.messages.get(k, 'nextDay') <= Date.parse(date)) {
+			client.messages.set(k, msDate, 'nextDay');
+			client.messages.set(k, 0, 'dailyMessages');
+		};
+	});
   client.miner.ensure(key, {
     miner: 1,
     totalMiner: 1,
