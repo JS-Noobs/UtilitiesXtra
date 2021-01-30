@@ -48,7 +48,7 @@ module.exports = {
       
       let page = parseInt(args[0]) || 1;
       if(page > Math.ceil(total/10)) page = Math.ceil(total/10);
-      const leaders = leader.sort((x, y) => y.total - x.total).splice(page*10-10, 10);
+      const leaders = leader.sort((x, y) => y.dailyMessages - x.dailyMessages).splice(page*10-10, 10);
       let top;
       let topList = client.messages.filter(x => x.guild === message.guild.id).array()
       if(page === 1) top = 10;
