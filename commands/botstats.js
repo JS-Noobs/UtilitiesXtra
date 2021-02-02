@@ -41,8 +41,8 @@ module.exports = {
     .addField('\u200b', '\u200b', true)
     .addField('\u200b', '\u200b', true)
     .addField('Total Memory', Math.round(totalMem/1000000)+'MB', true)
-    .addField('Used Memory', Math.round(freeMem/1000000)+'MB', true)
-    .addField('Memory Used', percent+'%', true)
+    .addField('Free Memory', Math.round(freeMem/1000000)+'MB', true)
+    .addField('Memory Used', (100-percent)+'%', true)
     
     message.channel.send(embed)
   },
