@@ -3,7 +3,8 @@ const shop = require('../shop.json');
 const upgrades = require('../upgrades.json');
 const monsters = require('../monsters.json');
 const timeout = new Set();
-const os = require('os')
+const os = require('os');
+const si = require('systeminformation');
 module.exports = {
 	name: 'botstats',
   alias: ['bstats'],
@@ -31,8 +32,10 @@ module.exports = {
     const totalMem = os.totalmem();
     const freeMem = os.freemem();
     const percent = ((freeMem/totalMem) * 100).toFixed(2);
+		const cpType = await si.cpu
     const embed = new MessageEmbed()
     .setTitle('Bot statistics')
+		.setDescription(`CPU: ${cpType.manufacturer} ${cpType.brand} ${cpType.speed} ${cpType.cores}core ${cpType.processors}`)
     .addField('CPU Usage', `${cpuUsage}%`, true)
     .addField('\u200b', '\u200b', true)
     .addField('\u200b', '\u200b', true)
