@@ -40,6 +40,7 @@ client.adventure = new Enmap({name: 'adventure'});
 client.votechannels = new Enmap({name: 'votechannels'});
 client.miner = new Enmap({name: 'miner'});
 client.messages = new Enmap({name: 'messages'});
+client.queue = new Enmap({name: 'queue'});
 //==========================================================//
 client.globaleco = new Enmap({name: 'globaleco'});
 //==========================================================//
