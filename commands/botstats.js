@@ -36,7 +36,7 @@ module.exports = {
 		console.log(cpType)
     const embed = new MessageEmbed()
     .setTitle('Bot statistics')
-		.setDescription(`CPU: ${cpType.manufacturer} ${cpType.brand} ${cpType.speed} ${cpType.cores}core ${cpType.processors}`)
+		.setDescription(`CPU: ${cpType.manufacturer} ${cpType.brand} ${cpType.speed} ${cpType.cores} cores, ${cpType.processors} processors`)
     .addField('CPU Usage', `${cpuUsage}%`, true)
     .addField('\u200b', '\u200b', true)
     .addField('\u200b', '\u200b', true)
