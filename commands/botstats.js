@@ -32,7 +32,7 @@ module.exports = {
     const totalMem = os.totalmem();
     const freeMem = os.freemem();
     const percent = ((freeMem/totalMem) * 100).toFixed(2);
-		const cpType = await si.cpu
+		const cpType = await si.cpu()
 		console.log(cpType)
     const embed = new MessageEmbed()
     .setTitle('Bot statistics')
