@@ -33,6 +33,7 @@ module.exports = {
     const freeMem = os.freemem();
     const percent = ((freeMem/totalMem) * 100).toFixed(2);
 		const cpType = await si.cpu
+		console.log(cpType)
     const embed = new MessageEmbed()
     .setTitle('Bot statistics')
 		.setDescription(`CPU: ${cpType.manufacturer} ${cpType.brand} ${cpType.speed} ${cpType.cores}core ${cpType.processors}`)
