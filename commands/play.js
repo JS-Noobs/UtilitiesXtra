@@ -17,6 +17,10 @@ module.exports = {
     const vc = message.member.voice.channel;
     if(!vc) return message.channel.send(`You have to be in a voice channel to play music`);
     const connection = await vc.join();
-    const dispatcher = connection.play(ytdl(args[0], { quality: 'highestaudio' }));
+    const dispatcher = connection.play(ytdl(args[0], { quality: 'highestaudio' })).then(con => {
+    	con.on('debug', debug => {
+				console.log(debug);
+			});
+    });
   },
 };
