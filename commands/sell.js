@@ -34,7 +34,7 @@ module.exports = {
       let canUp = true;
       const tries = Math.round(sum/50);
       for(i=0;i<tries;i++){
-        const rnd = Math.floor(Math.random() * (100 - 1) + 1);
+        const rnd = Math.floor(Math.random() * (100 - 1)) + 1;
         if(rnd <= 1 && canUp && client.stats.get(key, 'barter' < 10)){
           canUp = false;
           client.stats.inc(key, 'barter');
@@ -63,7 +63,7 @@ module.exports = {
       let canUp = true;
       const tries = Math.round(price/50);
       for(z=0;z<tries;z++){
-        const rnd = Math.floor(Math.random() * (100 - 1) + 1);
+        const rnd = Math.floor(Math.random() * (100 - 1)) + 1;
         if(rnd <= 1 && canUp && client.stats.get(key, 'barter') < 10){
           canUp = false;
           client.stats.inc(key, 'barter');
