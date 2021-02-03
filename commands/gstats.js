@@ -2,8 +2,8 @@ const {MessageEmbed} = require('discord.js');
 const ms = require('pretty-ms');
 
 module.exports = {
-	name: 'gstatistics',
-  alias: ['ginfo','gstats'],
+	name: 'gstats',
+  alias: ['ginfo','gstatisstics'],
 	description: 'Shows your global stats',
   category: 'boteco',
   permissions: [],
@@ -54,7 +54,7 @@ module.exports = {
       for(let i=0;i<10;i++){
         bar2.push(client.emojis.cache.find(x => x.name === 'bar10'));
       };
-    } else if(arr.length === 2) {
+    } else if(arr2.length === 2) {
       for(let i=0;i<arr2[0]; i++) {
         bar2.push(client.emojis.cache.find(x => x.name === `bar10`))
       };

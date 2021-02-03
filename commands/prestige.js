@@ -27,6 +27,7 @@ module.exports = {
       return message.channel.send(embed);
     };
     if(!sett.has(message.member.id)) {
+      sett.add(message.member.id);
       setTimeout(() => {
         sett.remove(message.member.id)
       }, 20000)
@@ -37,6 +38,7 @@ module.exports = {
       client.globaleco.set(message.member.id, 0, 'money');
       client.globaleco.set(message.member.id, 0, 'xp');
       client.globaleco.set(message.member.id, 0, 'level');
+      client.globaleco.set(message.member.id, 750, 'requiredxp');
 
       return message.channel.send(`You have prestiged to the next level!`)
     };
