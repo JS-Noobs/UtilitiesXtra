@@ -3,7 +3,7 @@ const shop = require('../shop.json');
 const upgrades = require('../upgrades.json');
 const monsters = require('../monsters.json');
 const timeout = new Set();
-const ytdl = require('ytdl-core-discord');
+const ytdl = require('ytdl-core');
 module.exports = {
 	name: 'play',
   alias: ['youtube', 'yt'],
