@@ -27,12 +27,3 @@
 # 1.0.0
 First release that is out of beta!
 The versions folder will stay for a little while but will be fully removed later.
-## Fixes
-* Fixed a bug where you could get infinite money (very unknown bug so nobody shouldve found it)
-## New
-* Server logging has been added
-* An easter egg
-## Changes
-* Improved chance of killing monsters while hunting
-## Known Issues
-* Items may or may not get lost between restarts, this is nothing I can fix as of right now but it should not happen often.
