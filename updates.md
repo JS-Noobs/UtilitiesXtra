@@ -1,4 +1,6 @@
 # Updates
+##
+* Added softban command, believe it or not im not giving up on utilities
 ## 1.0.7
 * Started writing patch notes again
 ## 1.0.1-2
