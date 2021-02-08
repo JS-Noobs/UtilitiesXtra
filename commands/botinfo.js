@@ -14,7 +14,7 @@ module.exports = {
     let users = 0; client.guilds.cache.forEach(g => users += g.memberCount);
     const guilds = client.guilds.cache.size;
     const commands = client.commands.size;
-    const version = 1.0.7;
+    const version = '1.0.7';
     const support = '[Discord](https://discord.gg/BbyWYAYabH "This will take you to the support server")';
     const trello = '[Upcoming](https://github.com/LightBlueGamer/UtilitiesXtra/projects/1?fullscreen=true)'
     const full = version.split('.').splice(0, 1);
