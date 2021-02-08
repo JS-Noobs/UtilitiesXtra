@@ -95,7 +95,6 @@ module.exports = {
         	msg.delete({timeout: 1});
 					message.channel.send(emb);
 				} else if(ore.level > client.miner.get(key, 'pickaxe')){
-					console.log(ore.name+' '+ore.level)
 					client.miner.set(key, '', 'ore');
 					emb.setTitle(`You found nothing of interest in the mines`)
 					.setColor('ORANGE')
