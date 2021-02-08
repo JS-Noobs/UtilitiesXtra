@@ -1,5 +1,6 @@
-_New updates will from here on be posted here. Updates will be listed with new updates on top and old updates on bottom. Updates will now also become with more than 1 command per update as I usually did however this file will be updated for every command but with a -x "dash version" as to smaller part of a bigger update._
-
+# Updates
+## 1.0.7
+* Started writing patch notes again
 ## 1.0.1-2
 * Added new skill "intelligence"
 * Hunting now have a (intelligence * 5)% chance to give you 1 extra item this goes for every item you get. You also have a standard 25% chance to get 1 extra item this gives you a ratio of 1-3 items when hunting
