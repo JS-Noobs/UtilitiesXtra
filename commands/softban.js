@@ -37,7 +37,7 @@ module.exports = {
         member.ban();
         message.guild.members.unban(member.user)
       };
-      client.emit('logger', 'Softbanned Member', message.author.tag, member.user.tag, reason, null, 'ban', message.url, message.guild.id);
+      client.emit('logger', 'Softbanned Member', message.author.tag, member.user.tag, reason, null, 'softban', message.url, message.guild.id);
     };
     ban()
   },
