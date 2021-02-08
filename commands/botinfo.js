@@ -14,7 +14,7 @@ module.exports = {
     let users = 0; client.guilds.cache.forEach(g => users += g.memberCount);
     const guilds = client.guilds.cache.size;
     const commands = client.commands.size;
-    const version = require('../package.json').version;
+    const version = 1.0.7;
     const support = '[Discord](https://discord.gg/BbyWYAYabH "This will take you to the support server")';
     const trello = '[Upcoming](https://github.com/LightBlueGamer/UtilitiesXtra/projects/1?fullscreen=true)'
     const full = version.split('.').splice(0, 1);
@@ -45,9 +45,6 @@ module.exports = {
     .addField('Github', patch, true)
     .addField('Updates', trello, true)
     .addField('Support', support, true)
-    .addField('Release', full, true)
-    .addField('Beta', release, true)
-    .addField('Build', development, true)
     .setFooter(`Online for ${arr.splice(0, arr.length-1).join(' ') + ` ${arr[0].replace(/\.\d/igm, '')}`}!`)
 
     message.channel.send(embed);
