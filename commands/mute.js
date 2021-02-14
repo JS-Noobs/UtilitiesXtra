@@ -62,7 +62,7 @@ module.exports = {
       guild: message.guild.id
     });
 
-    const muted = message.guild.roles.cache.get(client.botsettings.get(message.guild.id, 'mutedRole')) || message.guild.roles.cache.find(x => x.name.toLowerCase().includes('muted'));
+    let muted = message.guild.roles.cache.get(client.botsettings.get(message.guild.id, 'mutedRole')) || message.guild.roles.cache.find(x => x.name.toLowerCase().includes('muted'));
 
     if(!muted) message.guild.roles.create({
         data: {
@@ -73,6 +73,8 @@ module.exports = {
 						]
         },
       }).then(role => client.botsettings.set(message.guild.id, role.id, 'mutedRole'));
+		
+		muted = message.guild.roles.cache.get(client.botsettings.get(message.guild.id, 'mutedRole')) || message.guild.roles.cache.find(x => x.name.toLowerCase().includes('muted'));
 
     const reason = args.slice(2).join(' ') || `${member} was muted for ${ms(muteTime, {long: true})}.`;
 
