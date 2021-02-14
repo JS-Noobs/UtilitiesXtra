@@ -41,6 +41,15 @@ module.exports = {
     } else if(muteTime.includes('d')){
       muteTime = 1000 * 60 * 60 * 24 * parseInt(muteTime);
       endMute.setDate(endMute.getDate() + parseInt(args[1]));
+    } else if(muteTime.includes('w')){
+      muteTime = 1000 * 60 * 60 * 24 * 7 * parseInt(muteTime);
+      endMute.setDate(endMute.getDate() + parseInt(args[1]));
+    } else if(muteTime.includes('mo')){
+      muteTime = 1000 * 60 * 60 * 24 * 7 * 30 * parseInt(muteTime);
+      endMute.setDate(endMute.getDate() + parseInt(args[1]));
+    } else if(muteTime.includes('y')){
+      muteTime = 1000 * 60 * 60 * 24 * 7 * 30 * 12 * parseInt(muteTime);
+      endMute.setDate(endMute.getDate() + parseInt(args[1]));
     } else {
       return message.channel.send(`${muteTime} could not be formatted to a time.`);
     };
@@ -58,7 +67,10 @@ module.exports = {
     if(!muted) message.guild.roles.create({
         data: {
           name: 'Muted',
-          color: 'GRAY'
+          color: 'GRAY',
+					permissions: [
+							SEND_MESSAGES: false
+						]
         },
       }).then(role => client.botsettings.set(message.guild.id, role.id, 'mutedRole'));
 
