@@ -10,7 +10,7 @@ module.exports = {
   botpermissions: ['MANAGE_ROLES'],
   development: false,
   ea: false,
-	execute(message, args, client) {
+	execute: async (message, args, client) => {
     if(!args[0]) return message.channel.send(`Please mention a member to mute`);
 
     const member = message.mentions.members.first() || message.guild.members.cache.get(args[0]) || message.guild.members.cache.find(x => x.displayName.toLowerCase().startsWith(args[0])) || message.guild.members.cache.find(x => x.user.tag.toLowerCase().startsWith(args[0]));
@@ -62,7 +62,7 @@ module.exports = {
       guild: message.guild.id
     });
 
-    if(!message.guild.roles.cache.has(client.botsettings.get(message.guild.id, 'mutedRole')) || !message.guild.roles.cache.some(x => x.name.toLowerCase().includes('muted'))) message.guild.roles.create({
+    if(!message.guild.roles.cache.has(client.botsettings.get(message.guild.id, 'mutedRole')) || !message.guild.roles.cache.some(x => x.name.toLowerCase().includes('muted'))) await message.guild.roles.create({
         data: {
           name: 'Muted',
           color: 'GRAY',
