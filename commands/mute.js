@@ -69,7 +69,7 @@ module.exports = {
           name: 'Muted',
           color: 'GRAY',
 					permissions: [
-							"SEND_MESSAGES": false
+							"READ_MESSAGES"
 						]
         },
       }).then(role => client.botsettings.set(message.guild.id, role.id, 'mutedRole'));
