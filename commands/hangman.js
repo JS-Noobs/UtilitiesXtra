@@ -76,7 +76,6 @@ _______
 =======
 
 ${array.join('')} - ${word.length} letters.
-${guesses.join(', ')}
  \`\`\``;
 
             const embed = new MessageEmbed()
