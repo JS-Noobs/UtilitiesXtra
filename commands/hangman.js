@@ -43,7 +43,10 @@ _______
 ${array.join('')} - ${word.length} letters.
 ${guesses.join(', ')}
 \`\`\``;
-            if(array.join('').toLowerCase() === word.toLowerCase()) return message.channel.send(`You won! The word was ${word}`);
+            if(array.join('').toLowerCase() === word.toLowerCase()) {
+							client.hangman.delete(key);
+							return message.channel.send(`You won! The word was ${word}`);
+						};
             const embed = new MessageEmbed()
             .setTitle(`${message.member.displayName}'s hangman`)
             .setDescription(string)
