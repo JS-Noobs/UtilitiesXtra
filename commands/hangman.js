@@ -36,7 +36,7 @@ _______
 |   |
 |   ${points > 0 ? 'O' : ' '}
 |  ${points > 2 ? '/' : ' '}${points > 1 ? '|' : ' '}${points > 3 ? '\\' : ' '}
-|  ${points > 4 ? '/' : ' '}${points > 5 ? '\\' : ' '}
+|   ${points > 4 ? '/' : ' '}${points > 5 ? '\\' : ' '}
 |
 =======
 
@@ -72,7 +72,8 @@ _______
 |
 =======
 
-${array.join('')}
+${array.join('')} - ${word.length} letters.
+${guesses.join(', ')}
  \`\`\``;
 
             const embed = new MessageEmbed()
