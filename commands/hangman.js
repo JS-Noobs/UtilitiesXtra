@@ -16,7 +16,7 @@ module.exports = {
             if(!args[0]) return message.channel.send(`Include your letter guess in the message!`);
             if(!isNaN(args[0])) return message.channel.send(`There is no numbers!`);
             if(args[0].length > 1) return message.channel.send(`You may only guess at letters!`);
-            let word = client.hangman.get(key, 'word'), arr = new Array(word.length).fill('_'), guessed = client.hangman.get(key, 'guessed');
+            let word = client.hangman.get(key, 'word'), arr = client.hangman.get(key, 'array'), guessed = client.hangman.get(key, 'guessed');
             if(guessed.includes(args[0])) return message.channel.send(`Letter has already been guessed.`);
             if(word.includes(args[0])) {
                 for(let i=0; i<word.length; i++){
