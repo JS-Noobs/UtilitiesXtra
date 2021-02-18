@@ -41,7 +41,7 @@ _______
 =======
 
 ${array.join('')} - ${word.length} letters.
-${guesses.join(', '}
+${guesses.join(', ')}
 \`\`\``;
             if(array.join('').toLowerCase() === word.toLowerCase()) return message.channel.send(`You won! The word was ${word}`);
             const embed = new MessageEmbed()
