@@ -30,7 +30,7 @@ module.exports = {
                 client.hangman.inc(key, 'points');
                 client.hangman.push(key, args[0], 'guessed')
             };
-            const points = client.hangman.get(key, 'points'), array = client.hangman.get(key, 'array');
+            const points = client.hangman.get(key, 'points'), array = client.hangman.get(key, 'array'), guesses = client.hangman.get(key, 'guessed');
             let string = `\`\`\`
 _______
 |   |
@@ -40,7 +40,8 @@ _______
 |
 =======
 
-${array.join('')}
+${array.join('')} - ${word.length} letters.
+${guesses.join(', '}
 \`\`\``;
             if(array.join('').toLowerCase() === word.toLowerCase()) return message.channel.send(`You won! The word was ${word}`);
             const embed = new MessageEmbed()
