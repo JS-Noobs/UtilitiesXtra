@@ -41,6 +41,7 @@ client.votechannels = new Enmap({name: 'votechannels'});
 client.miner = new Enmap({name: 'miner'});
 client.messages = new Enmap({name: 'messages'});
 client.queue = new Enmap({name: 'queue'});
+client.hangman = new Enmap({name: 'hangman'});
 //==========================================================//
 client.globaleco = new Enmap({name: 'globaleco'});
 //==========================================================//
