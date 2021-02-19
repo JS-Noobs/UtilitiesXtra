@@ -28,9 +28,9 @@ module.exports = {
                 client.hangman.push(key, args[0], 'guessed');
             } else {
                 client.hangman.inc(key, 'points');
-                client.hangman.push(key, args[0], 'guessed')
+                client.hangman.push(key, args[0], 'guessedWrong')
             };
-            const points = client.hangman.get(key, 'points'), array = client.hangman.get(key, 'array'), guesses = client.hangman.get(key, 'guessed');
+            const points = client.hangman.get(key, 'points'), array = client.hangman.get(key, 'array'), guesses = client.hangman.get(key, 'guessed'), gr = client.hangman.get(key, 'guessedWrong');
             let string = `\`\`\`
 _______
 |   |
@@ -40,8 +40,9 @@ _______
 |
 =======
 
-${array.join('')} - ${word.length} letters.
-${guesses.join(', ')}
+${array.join(' ')} - ${word.length} letters.
+Right guesses: ${guesses.join(', ')}
+Wrong guesses: ${gr.join(', ')}
 \`\`\``;
             if(array.join('').toLowerCase() === word.toLowerCase()) {
 							client.hangman.delete(key);
@@ -63,7 +64,8 @@ ${guesses.join(', ')}
                 points: 0,
                 word: word,
                 array: array,
-                guessed: []
+                guessed: [],
+								guessedWrong: []
             });
             const points = client.hangman.get(key, 'points');
             const string = `\`\`\`
@@ -75,7 +77,7 @@ _______
 |
 =======
 
-${array.join('')} - ${word.length} letters.
+${array.join(' ')} - ${word.length} letters.
  \`\`\``;
 
             const embed = new MessageEmbed()
