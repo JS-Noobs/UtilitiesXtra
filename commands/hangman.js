@@ -58,14 +58,10 @@ ${word}
 							return message.channel.send(embed);
 						};
             const embed = new MessageEmbed()
-            .setTitle(`${message.member.displayName}'s hangman`)
+            .setTitle(points > 5 ? `You loose!` : `${message.member.displayName}'s hangman`)
             .setDescription(string)
 						.addField('Right guesses', `\`\`\`\u200b${guesses.join(', ')}\`\`\``)
 						.addField('Wrong guesses', `\`\`\`\u200b${gr.join(', ')}\`\`\``)
-            if(points > 5) {
-                embed.addField(`You loose!`, `The word was ${word}`);
-                client.hangman.delete(key);
-            };
 
             return message.channel.send(embed);
         } else {
