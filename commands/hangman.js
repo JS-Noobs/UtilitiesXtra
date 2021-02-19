@@ -62,7 +62,7 @@ ${word}
             .setDescription(string)
 						.addField('Right guesses', `\`\`\`\u200b${guesses.join(', ')}\`\`\``)
 						.addField('Wrong guesses', `\`\`\`\u200b${gr.join(', ')}\`\`\``)
-
+if(points > 5) client.hangman.delete(key)
             return message.channel.send(embed);
         } else {
             const word = words[Math.floor(Math.random() * words.length)];
