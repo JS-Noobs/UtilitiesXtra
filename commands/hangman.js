@@ -11,13 +11,16 @@ module.exports = {
     ea: false,
 	execute: async(message, args, client) => {
     const key = `${message.guild.id}-${message.member.id}`;
-        
+		client.hmstats.ennsure(client.user.id, {
+			words: []
+		});
+		
         if(client.hangman.has(key)){
             if(!args[0]) return message.channel.send(`Include your letter guess in the message!`);
             if(!isNaN(args[0])) return message.channel.send(`There is no numbers!`);
             if(args[0].length > 1) return message.channel.send(`You may only guess at letters!`);
             let word = client.hangman.get(key, 'word'), arr = client.hangman.get(key, 'array'), guessed = client.hangman.get(key, 'guessed');
-            if(guessed.includes(args[0])) return message.channel.send(`Letter has already been guessed.`);
+						if(guessed.includes(args[0])) return message.channel.send(`Letter has already been guessed.`);
 						if(client.hangman.get(key, 'guessedWrong').includes(args[0])) return message.channel.send(`Letter has already been guessed.`);
             if(word.includes(args[0])) {
                 for(let i=0; i<word.length; i++){
@@ -31,7 +34,13 @@ module.exports = {
                 client.hangman.inc(key, 'points');
                 client.hangman.push(key, args[0], 'guessedWrong')
             };
-            const points = client.hangman.get(key, 'points'), array = client.hangman.get(key, 'array'), guesses = client.hangman.get(key, 'guessed'), gr = client.hangman.get(key, 'guessedWrong');
+            
+						const wins = client.hangman.get(client.user.id, 'words').find(x => x.name === word).wins;
+						const losses = client.hangman.get(client.user.id, 'words').find(x => x.name === word).loose;
+						const total = wins + losses;
+						const winPer = wins / total * 100;
+						const losPer = losses / total * 100;
+						const points = client.hangman.get(key, 'points'), array = client.hangman.get(key, 'array'), guesses = client.hangman.get(key, 'guessed'), gr = client.hangman.get(key, 'guessedWrong');
             let string = `\`\`\`
 _______
 |   |
@@ -42,13 +51,43 @@ _______
 =======
 
 ${points > 5 ? word : `${array.join('\u200a')} -  ${word.length} letters.`}
+${points > 5 ? `About ${winPer}% users guessed correct.` : ''}
+${points > 5 ? `About ${losPer}% users guessed wrong.` : ''}
+${points > 5 ? `This word has been shown ${total} times` : ''}
+
+About ${losPer}% users guessed wrong.
+This word has been shown ${total} times.
 \`\`\``;
+					
+					if(array.join('').toLowerCase() === word.toLowerCase()) {
+						if(client.hangman.get(client.user.id, 'words').some(x => x.name === word)){
+							client.hangman.get(client.user.id, 'words').forEach(x => {
+								if(x.name === word) x.wins++;
+							});
+						} else {
+							const w = {name: word, wins: 1, loose: 0};
+							client.hangman.push(client.user.id, w, 'words');
+						};
+					} else if(points > 5) {
+						if(client.hangman.get(client.user.id, 'words').some(x => x.name === word)){
+							client.hangman.get(client.user.id, 'words').forEach(x => {
+								if(x.name === word) x.loose++;
+							});
+						} else {
+							const w = {name: word, wins: 0, loose: 1};
+							client.hangman.push(client.user.id, w, 'words');
+						};
+					};
+					
             if(array.join('').toLowerCase() === word.toLowerCase()) {
 	    client.hangman.delete(key);
 	    let str = `\`\`\`
 CONGRATS!
 =========
 ${word.toUpperCase()}
+About ${winPer}% users guessed correct.
+About ${losPer}% users guessed wrong.
+This word has been shown ${total} times.
 \`\`\``
 							const embed = new MessageEmbed()
 							.setTitle(`You beat the executioner!`)
@@ -60,7 +99,7 @@ ${word.toUpperCase()}
             .setDescription(string)
 						.addField('Right guesses', `\`\`\`\u200b${guesses.join(', ')}\`\`\``)
 						.addField('Wrong guesses', `\`\`\`\u200b${gr.join(', ')}\`\`\``)
-if(points > 5) client.hangman.delete(key)
+						if(points > 5) client.hangman.delete(key)
             return message.channel.send(embed);
         } else {
             const word = words[Math.floor(Math.random() * words.length)];
