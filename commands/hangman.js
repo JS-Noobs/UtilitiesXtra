@@ -55,9 +55,6 @@ ${points > 5 ? word : `${array.join('\u200a')} -  ${word.length} letters.`}
 ${points > 5 ? `About ${winPer}% users guessed correct.` : ''}
 ${points > 5 ? `About ${losPer}% users guessed wrong.` : ''}
 ${points > 5 ? `This word has been shown ${total} times` : ''}
-
-About ${losPer}% users guessed wrong.
-This word has been shown ${total} times.
 \`\`\``;
 					
 					if(array.join('').toLowerCase() === word.toLowerCase()) {
