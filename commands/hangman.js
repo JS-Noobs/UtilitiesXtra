@@ -20,7 +20,7 @@ module.exports = {
 		client.hmstats.ensure(client.user.id, {
 			words: []
 		});
-		client.hmstats.push(client.user.id, {name: word, wins: 0, loose: 0}, 'words');
+		if(!client.hmstats.get(client.user.id, 'words').some(x => x.name === word))client.hmstats.push(client.user.id, {name: word, wins: 0, loose: 0}, 'words');
 						if(guessed.includes(args[0])) return message.channel.send(`Letter has already been guessed.`);
 						if(client.hangman.get(key, 'guessedWrong').includes(args[0])) return message.channel.send(`Letter has already been guessed.`);
             if(word.includes(args[0])) {
