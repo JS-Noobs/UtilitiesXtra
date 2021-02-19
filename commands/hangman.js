@@ -46,15 +46,9 @@ ${points > 5 ? word : `${array.join('\u200a')} -  ${word.length} letters.`}
             if(array.join('').toLowerCase() === word.toLowerCase()) {
 	    client.hangman.delete(key);
 	    let str = `\`\`\`
-_______
-|   |
-|
-|   O
-|  \|/
-|  / \
-=======
-
-${word}
+CONGRATS!
+=========
+${word.toUpperCase()}
 \`\`\``
 							const embed = new MessageEmbed()
 							.setTitle(`You beat the executioner!`)
