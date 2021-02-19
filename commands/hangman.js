@@ -35,8 +35,8 @@ module.exports = {
                 client.hangman.push(key, args[0], 'guessedWrong')
             };
             
-						const wins = client.hangman.get(client.user.id, 'words').find(x => x.name === word).wins;
-						const losses = client.hangman.get(client.user.id, 'words').find(x => x.name === word).loose;
+						const wins = client.hmstats.get(client.user.id, 'words').find(x => x.name === word).wins;
+						const losses = client.hmstats.get(client.user.id, 'words').find(x => x.name === word).loose;
 						const total = wins + losses;
 						const winPer = wins / total * 100;
 						const losPer = losses / total * 100;
