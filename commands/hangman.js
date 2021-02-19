@@ -85,7 +85,7 @@ This word has been shown ${total} times.
 							.setTitle(`You beat the executioner!`)
 							.setDescription(str)
 							message.channel.send(embed);
-		    					client.hangman.delete(key);
+		    					return client.hangman.delete(key);
 						};
             const embed = new MessageEmbed()
             .setTitle(points > 5 ? `You loose!` : `${message.member.displayName}'s hangman`)
