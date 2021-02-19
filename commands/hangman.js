@@ -11,15 +11,16 @@ module.exports = {
     ea: false,
 	execute: async(message, args, client) => {
     const key = `${message.guild.id}-${message.member.id}`;
-		client.hmstats.ensure(client.user.id, {
-			words: []
-		});
 		
         if(client.hangman.has(key)){
             if(!args[0]) return message.channel.send(`Include your letter guess in the message!`);
             if(!isNaN(args[0])) return message.channel.send(`There is no numbers!`);
             if(args[0].length > 1) return message.channel.send(`You may only guess at letters!`);
             let word = client.hangman.get(key, 'word'), arr = client.hangman.get(key, 'array'), guessed = client.hangman.get(key, 'guessed');
+		client.hmstats.ensure(client.user.id, {
+			words: []
+		});
+		client.hmstats.push(client.user.id, {name: word, wins: 0, loose: 0}, 'words');
 						if(guessed.includes(args[0])) return message.channel.send(`Letter has already been guessed.`);
 						if(client.hangman.get(key, 'guessedWrong').includes(args[0])) return message.channel.send(`Letter has already been guessed.`);
             if(word.includes(args[0])) {
