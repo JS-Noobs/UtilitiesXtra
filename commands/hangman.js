@@ -67,7 +67,7 @@ _______
 ${points > 5 ? word : `${array.join('\u200a')} -  ${word.length} letters.`}
 ${points > 5 ? `About ${parseFloat(winPer)}% users guessed correct.` : ''}
 ${points > 5 ? `About ${parseFloat(losPer)}% users guessed wrong.` : ''}
-${points > 5 ? `This word has been shown ${total+1} times` : ''}
+${points > 5 ? `This word has been shown ${total} times` : ''}
 \`\`\``;
 					
 					
