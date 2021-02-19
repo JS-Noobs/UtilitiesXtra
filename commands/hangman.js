@@ -57,7 +57,7 @@ _______
 ${word}
 \`\`\``
 							const embed = new MessageEmbed()
-							.setTitle(`You won!`)
+							.setTitle(`You beat the executioner!`)
 							.setDescription(str)
 							return message.channel.send(embed);
 						};
