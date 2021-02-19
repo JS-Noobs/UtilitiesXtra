@@ -36,12 +36,25 @@ module.exports = {
                 client.hangman.push(key, args[0], 'guessedWrong')
             };
             
+						const points = client.hangman.get(key, 'points'), array = client.hangman.get(key, 'array'), guesses = client.hangman.get(key, 'guessed'), gr = client.hangman.get(key, 'guessedWrong');
+						if(array.join('').toLowerCase() === word.toLowerCase()) {
+							if(client.hmstats.get(client.user.id, 'words').some(x => x.name === word)){
+								client.hmstats.get(client.user.id, 'words').forEach(x => {
+									if(x.name === word) x.wins++;
+								});
+							};
+						} else if(points > 5) {
+							if(client.hmstats.get(client.user.id, 'words').some(x => x.name === word)){
+								client.hmstats.get(client.user.id, 'words').forEach(x => {
+									if(x.name === word) x.loose++;
+								});
+							};
+						};
 						const wins = client.hmstats.get(client.user.id, 'words').find(x => x.name === word).wins;
 						const losses = client.hmstats.get(client.user.id, 'words').find(x => x.name === word).loose;
 						const total = wins + losses;
 						const winPer = parseInt(wins / total * 100).toFixed(2);
 						const losPer = parseInt(losses / total * 100).toFixed(2);
-						const points = client.hangman.get(key, 'points'), array = client.hangman.get(key, 'array'), guesses = client.hangman.get(key, 'guessed'), gr = client.hangman.get(key, 'guessedWrong');
             let string = `\`\`\`
 _______
 |   |
@@ -52,24 +65,12 @@ _______
 =======
 
 ${points > 5 ? word : `${array.join('\u200a')} -  ${word.length} letters.`}
-${points > 5 ? `About ${winPer}% users guessed correct.` : ''}
-${points > 5 ? `About ${losPer}% users guessed wrong.` : ''}
-${points > 5 ? `This word has been shown ${total} times` : ''}
+${points > 5 ? `About ${parseFloat(winPer)}% users guessed correct.` : ''}
+${points > 5 ? `About ${parseFloat(losPer)}% users guessed wrong.` : ''}
+${points > 5 ? `This word has been shown ${total+1} times` : ''}
 \`\`\``;
 					
-					if(array.join('').toLowerCase() === word.toLowerCase()) {
-						if(client.hmstats.get(client.user.id, 'words').some(x => x.name === word)){
-							client.hmstats.get(client.user.id, 'words').forEach(x => {
-								if(x.name === word) x.wins++;
-							});
-						};
-					} else if(points > 5) {
-						if(client.hmstats.get(client.user.id, 'words').some(x => x.name === word)){
-							client.hmstats.get(client.user.id, 'words').forEach(x => {
-								if(x.name === word) x.loose++;
-							});
-						};
-					};
+					
 					
             if(array.join('').toLowerCase() === word.toLowerCase()) {
 	    let str = `\`\`\`
