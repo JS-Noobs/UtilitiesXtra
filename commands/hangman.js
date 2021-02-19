@@ -55,7 +55,7 @@ ${word}
 							const embed = new MessageEmbed()
 							.setTitle(`You won!`)
 							.setDescription(str)
-							return message.channel.send(embed`);
+							return message.channel.send(embed);
 						};
             const embed = new MessageEmbed()
             .setTitle(`${message.member.displayName}'s hangman`)
