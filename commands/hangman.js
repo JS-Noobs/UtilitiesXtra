@@ -77,6 +77,7 @@ ${points > 5 ? `This word has been shown ${total+1} times` : ''}
 CONGRATS!
 =========
 ${word.toUpperCase()}
+
 About ${winPer}% users guessed correct.
 About ${losPer}% users guessed wrong.
 This word has been shown ${total} times.
