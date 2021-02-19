@@ -11,7 +11,7 @@ module.exports = {
     ea: false,
 	execute: async(message, args, client) => {
     const key = `${message.guild.id}-${message.member.id}`;
-		client.hmstats.ennsure(client.user.id, {
+		client.hmstats.ensure(client.user.id, {
 			words: []
 		});
 		
