@@ -58,22 +58,22 @@ ${points > 5 ? `This word has been shown ${total} times` : ''}
 \`\`\``;
 					
 					if(array.join('').toLowerCase() === word.toLowerCase()) {
-						if(client.hangman.get(client.user.id, 'words').some(x => x.name === word)){
-							client.hangman.get(client.user.id, 'words').forEach(x => {
+						if(client.hmstats.get(client.user.id, 'words').some(x => x.name === word)){
+							client.hmstats.get(client.user.id, 'words').forEach(x => {
 								if(x.name === word) x.wins++;
 							});
 						} else {
 							const w = {name: word, wins: 1, loose: 0};
-							client.hangman.push(client.user.id, w, 'words');
+							client.hmstats.push(client.user.id, w, 'words');
 						};
 					} else if(points > 5) {
-						if(client.hangman.get(client.user.id, 'words').some(x => x.name === word)){
-							client.hangman.get(client.user.id, 'words').forEach(x => {
+						if(client.hmstats.get(client.user.id, 'words').some(x => x.name === word)){
+							client.hmstats.get(client.user.id, 'words').forEach(x => {
 								if(x.name === word) x.loose++;
 							});
 						} else {
 							const w = {name: word, wins: 0, loose: 1};
-							client.hangman.push(client.user.id, w, 'words');
+							client.hmstats.push(client.user.id, w, 'words');
 						};
 					};
 					
