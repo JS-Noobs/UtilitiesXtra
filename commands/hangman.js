@@ -72,7 +72,6 @@ ${points > 5 ? `This word has been shown ${total} times` : ''}
 					};
 					
             if(array.join('').toLowerCase() === word.toLowerCase()) {
-	    client.hangman.delete(key);
 	    let str = `\`\`\`
 CONGRATS!
 =========
@@ -84,7 +83,8 @@ This word has been shown ${total} times.
 							const embed = new MessageEmbed()
 							.setTitle(`You beat the executioner!`)
 							.setDescription(str)
-							return message.channel.send(embed);
+							message.channel.send(embed);
+		    					client.hangman.delete(key);
 						};
             const embed = new MessageEmbed()
             .setTitle(points > 5 ? `You loose!` : `${message.member.displayName}'s hangman`)
