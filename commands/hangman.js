@@ -2,7 +2,7 @@ const {MessageEmbed} = require('discord.js');
 const words = require('../words.json');
 module.exports = {
     name: 'hangman',
-    alias: [],
+    alias: ['hm','wordguesser'],
 	description: 'Start or continue a game of hangman',
     category: 'fun',
     permissions: [],
@@ -44,7 +44,18 @@ ${points > 5 ? word : `${array.join('\u200a')} -  ${word.length} letters.`}
 \`\`\``;
             if(array.join('').toLowerCase() === word.toLowerCase()) {
 							client.hangman.delete(key);
-							return message.channel.send(`You won! The word was ${word}`);
+							let str = `\`\`\`
+	 O
+	\|/
+	/ \
+=======
+
+${word}
+\`\`\``
+							const embed = new MessageEmbed()
+							.setTitle(`You won!`)
+							.setDescription(str)
+							return message.channel.send(`embed`);
 						};
             const embed = new MessageEmbed()
             .setTitle(`${message.member.displayName}'s hangman`)
