@@ -49,8 +49,8 @@ ${points > 5 ? word : `${array.join('\u200a')} -  ${word.length} letters.`}
             const embed = new MessageEmbed()
             .setTitle(`${message.member.displayName}'s hangman`)
             .setDescription(string)
-						.addField('Right guesses', `\`\`\`${guesses.join(', ')}\`\`\``)
-						.addField('Wrong guesses', `\`\`\`${gr.join(', ')}\`\`\``)
+						.addField('Right guesses', `\`\`\`\u200b${guesses.join(', ')}\`\`\``)
+						.addField('Wrong guesses', `\`\`\`\u200b${gr.join(', ')}\`\`\``)
             if(points > 5) {
                 embed.addField(`You loose!`, `The word was ${word}`);
                 client.hangman.delete(key);
