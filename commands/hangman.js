@@ -40,9 +40,8 @@ _______
 |
 =======
 
-${array.join(' ')} - ${word.length} letters.
-Right guesses: ${guesses.join(', ')}
-Wrong guesses: ${gr.join(', ')}
+${points > 5 ? word : `${array.join('\u200a')} - word.length letters.`}
+${array.join('\u200a')} - ${word.length} letters.
 \`\`\``;
             if(array.join('').toLowerCase() === word.toLowerCase()) {
 							client.hangman.delete(key);
@@ -51,6 +50,8 @@ Wrong guesses: ${gr.join(', ')}
             const embed = new MessageEmbed()
             .setTitle(`${message.member.displayName}'s hangman`)
             .setDescription(string)
+						.addField('Right guesses', guesses.join(', '))
+						.addField('Wrong guesses', gr.join(', '))
             if(points > 5) {
                 embed.addField(`You loose!`, `The word was ${word}`);
                 client.hangman.delete(key);
@@ -77,7 +78,7 @@ _______
 |
 =======
 
-${array.join(' ')} - ${word.length} letters.
+${array.join('\u200a')} - ${word.length} letters.
  \`\`\``;
 
             const embed = new MessageEmbed()
