@@ -39,8 +39,8 @@ module.exports = {
 						const wins = client.hmstats.get(client.user.id, 'words').find(x => x.name === word).wins;
 						const losses = client.hmstats.get(client.user.id, 'words').find(x => x.name === word).loose;
 						const total = wins + losses;
-						const winPer = wins / total * 100;
-						const losPer = losses / total * 100;
+						const winPer = parseInt(wins / total * 100).toFixed(2);
+						const losPer = parseInt(losses / total * 100).toFixed(2);
 						const points = client.hangman.get(key, 'points'), array = client.hangman.get(key, 'array'), guesses = client.hangman.get(key, 'guessed'), gr = client.hangman.get(key, 'guessedWrong');
             let string = `\`\`\`
 _______
