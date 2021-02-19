@@ -42,6 +42,7 @@ client.miner = new Enmap({name: 'miner'});
 client.messages = new Enmap({name: 'messages'});
 client.queue = new Enmap({name: 'queue'});
 client.hangman = new Enmap({name: 'hangman'});
+client.hmstats = new Enmap({name: 'hmstats'});
 //==========================================================//
 client.globaleco = new Enmap({name: 'globaleco'});
 //==========================================================//
