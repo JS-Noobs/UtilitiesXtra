@@ -46,12 +46,12 @@ ${points > 5 ? word : `${array.join('\u200a')} -  ${word.length} letters.`}
             if(array.join('').toLowerCase() === word.toLowerCase()) {
 							client.hangman.delete(key);
 							let str = `\`\`\`
-_______
-|		|
-|
-| 	O
-|	 \|/
-|	 / \
+_______\n
+|		|\n
+|\n
+| 	O\n
+|	 \|/\n
+|	 / \\n
 =======
 
 ${word}
