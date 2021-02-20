@@ -12,10 +12,11 @@ module.exports = {
 	execute: async(message, args, client) => {
      const msg = await message.channel.send(`Pinging...`);
      const ping = await ms(Date.now() - msg.createdAt);
+     msg.delete()
      const embed = new MessageEmbed()
      .setTitle(`Ping`)
      .setDescription(`:ping_pong: ${ping}\n:heartbeat: ${client.ws.ping}ms`)
      .setColor('GREEN')
-     msg.edit(embed)
+     message.channel.send(embed);
   },
 };
