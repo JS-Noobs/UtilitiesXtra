@@ -14,7 +14,7 @@ module.exports = {
      const ping = await ms(Date.now() - msg.createdAt);
      const embed = new MessageEmbed()
      .setTitle(`Ping`)
-     .setDescription(`:ping_pong: ${ping}\n:heartbeat: ${client.ws.ping}`)
+     .setDescription(`:ping_pong: ${ping}\n:heartbeat: ${client.ws.ping}ms`)
      .setColor('GREEN')
      msg.edit(embed)
   },
