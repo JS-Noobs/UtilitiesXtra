@@ -16,6 +16,6 @@ module.exports = {
      .setTitle(`Ping`)
      .setDescription(`:ping_pong: ${ping}\n:heartbeat: ${client.ws.ping}`)
      .setColor('GREEN')
-     message.channel.send(embed)
+     msg.edit(embed)
   },
 };
