@@ -1,10 +1,10 @@
 const {MessageEmbed} = require('discord.js');
 const ms = require('pretty-ms');
 module.exports = {
-	name: 'adventure',
-  alias: ['av'],
-	description: 'Start an adventure',
-  category: 'rpg',
+	name: 'ping',
+  alias: [],
+	description: 'Shows bot ping and heartbeat',
+  category: 'bot',
   permissions: [],
   botpermissions: [],
   development: false,
