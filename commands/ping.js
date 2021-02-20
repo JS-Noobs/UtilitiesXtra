@@ -11,7 +11,7 @@ module.exports = {
   ea: false,
 	execute: async(message, args, client) => {
      const msg = await message.channel.send(`Pinging...`);
-     await ping = ms(Date.now - msg.createdAt);
+     const ping = await ms(Date.now - msg.createdAt);
      const embed = new MessageEmbed()
      .setTitle(`Ping`)
      .setDescription(`:ping_pong: ${ping}\n:heartbeat: ${client.ws.ping}`)
