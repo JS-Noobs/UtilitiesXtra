@@ -1,53 +1,53 @@
-const {MessageEmbed} = require('discord.js');
+const { MessageEmbed } = require('discord.js');
 const ms = require('pretty-ms');
 
 module.exports = {
-	name: 'mute',
+  name: 'mute',
   alias: ['silence'],
-	description: 'Mutes members.',
+  description: 'Mutes members.',
   category: 'moderation',
   permissions: ['MANAGE_ROLES'],
   botpermissions: ['MANAGE_ROLES'],
   development: false,
   ea: false,
-	execute: async (message, args, client) => {
-    if(!args[0]) return message.channel.send(`Please mention a member to mute`);
+  execute: async (message, args, client) => {
+    if (!args[0]) return message.channel.send(`Please mention a member to mute`);
 
     const member = message.mentions.members.first() || message.guild.members.cache.get(args[0]) || message.guild.members.cache.find(x => x.displayName.toLowerCase().startsWith(args[0])) || message.guild.members.cache.find(x => x.user.tag.toLowerCase().startsWith(args[0]));
     const exe = message.member;
     const bot = message.guild.me;
 
-    if(!member) return message.channel.send(`No valid member was found.`);
+    if (!member) return message.channel.send(`No valid member was found.`);
 
-    if(member.id === message.guild.ownerID) return message.channel.send(`You can't mute the owner.`);
-    if(member.id === exe.id) return message.channel.send(`You can't mute yourself.`);
-    if(member.id === bot.id) return message.channel.send(`I can't mute myself.`);
-    if(member.roles.highest.position >= exe.roles.highest.position) return message.channel.send(`You can't mute someone with a higher than or equal role to yours.`);
-    if(member.roles.highest.position >= bot.roles.highest.position) return message.channel.send(`I can't mute someone with a higher than or equal role to mine.`);
+    if (member.id === message.guild.ownerID) return message.channel.send(`You can't mute the owner.`);
+    if (member.id === exe.id) return message.channel.send(`You can't mute yourself.`);
+    if (member.id === bot.id) return message.channel.send(`I can't mute myself.`);
+    if (member.roles.highest.position >= exe.roles.highest.position) return message.channel.send(`You can't mute someone with a higher than or equal role to yours.`);
+    if (member.roles.highest.position >= bot.roles.highest.position) return message.channel.send(`I can't mute someone with a higher than or equal role to mine.`);
 
-    if(!args[1]) return message.channel.send(`Please specfy time to mute the member for.`);
+    if (!args[1]) return message.channel.send(`Please specfy time to mute the member for.`);
     let muteTime = args[1];
     let endMute = new Date();
-    if(isNaN(parseInt(muteTime))) return message.channel.send(`${muteTime} is not a valid time, use (s, m, h, d) to choose format.`);
-    if(muteTime.includes('s')){
+    if (isNaN(parseInt(muteTime))) return message.channel.send(`${muteTime} is not a valid time, use (s, m, h, d) to choose format.`);
+    if (muteTime.includes('s')) {
       muteTime = 1000 * parseInt(muteTime);
       endMute.setSeconds(endMute.getSeconds() + parseInt(args[1]));
-    } else if(muteTime.includes('m')){
+    } else if (muteTime.includes('m')) {
       muteTime = 1000 * 60 * parseInt(muteTime);
       endMute.setMinutes(endMute.getMinutes() + parseInt(args[1]));
-    } else if(muteTime.includes('h')){
+    } else if (muteTime.includes('h')) {
       muteTime = 1000 * 60 * 60 * parseInt(muteTime);
       endMute.setHours(endMute.getHours() + parseInt(args[1]));
-    } else if(muteTime.includes('d')){
+    } else if (muteTime.includes('d')) {
       muteTime = 1000 * 60 * 60 * 24 * parseInt(muteTime);
       endMute.setDate(endMute.getDate() + parseInt(args[1]));
-    } else if(muteTime.includes('w')){
+    } else if (muteTime.includes('w')) {
       muteTime = 1000 * 60 * 60 * 24 * 7 * parseInt(muteTime);
       endMute.setDate(endMute.getDate() + parseInt(args[1]));
-    } else if(muteTime.includes('mo')){
+    } else if (muteTime.includes('mo')) {
       muteTime = 1000 * 60 * 60 * 24 * 7 * 30 * parseInt(muteTime);
       endMute.setDate(endMute.getDate() + parseInt(args[1]));
-    } else if(muteTime.includes('y')){
+    } else if (muteTime.includes('y')) {
       muteTime = 1000 * 60 * 60 * 24 * 7 * 30 * 12 * parseInt(muteTime);
       endMute.setDate(endMute.getDate() + parseInt(args[1]));
     } else {
@@ -62,24 +62,24 @@ module.exports = {
       guild: message.guild.id
     });
 
-    if(!message.guild.roles.cache.has(client.botsettings.get(message.guild.id, 'mutedRole')) || !message.guild.roles.cache.some(x => x.name.toLowerCase().includes('muted'))) await message.guild.roles.create({
-        data: {
-          name: 'Muted',
-          color: 'GRAY',
-					permissions: [
-							"VIEW_CHANNEL"
-						]
-        },
-      }).then(role => client.botsettings.set(message.guild.id, role.id, 'mutedRole'));
-		
-		const muted = message.guild.roles.cache.get(client.botsettings.get(message.guild.id, 'mutedRole')) || message.guild.roles.cache.find(x => x.name.toLowerCase().includes('muted'));
+    if (!message.guild.roles.cache.has(client.botsettings.get(message.guild.id, 'mutedRole')) || !message.guild.roles.cache.some(x => x.name.toLowerCase().includes('muted'))) await message.guild.roles.create({
+      data: {
+        name: 'Muted',
+        color: 'GRAY',
+        permissions: [
+          "VIEW_CHANNEL"
+        ]
+      },
+    }).then(role => client.botsettings.set(message.guild.id, role.id, 'mutedRole'));
 
-    const reason = args.slice(2).join(' ') || `${member} was muted for ${ms(muteTime, {long: true})}.`;
+    const muted = message.guild.roles.cache.get(client.botsettings.get(message.guild.id, 'mutedRole')) || message.guild.roles.cache.find(x => x.name.toLowerCase().includes('muted'));
+
+    const reason = args.slice(2).join(' ') || `${member} was muted for ${ms(muteTime, { long: true })}.`;
 
     async function mute() {
       member.roles.set([muted]);
-      member.send(`Ỳou have been muted in ${message.guild.name} for ${ms(muteTime, {long: true})}\nReason: ${reason}`);
-      message.channel.send(`${member} was muted for ${ms(muteTime, {long: true})}\nReason: ${reason}`);
+      member.send(`Ỳou have been muted in ${message.guild.name} for ${ms(muteTime, { long: true })}\nReason: ${reason}`);
+      message.channel.send(`${member} was muted for ${ms(muteTime, { long: true })}\nReason: ${reason}`);
 
       setTimeout(() => {
         member.roles.set(roles);

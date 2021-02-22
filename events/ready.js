@@ -8,7 +8,7 @@ module.exports = async (client) => {
     const date = new Date();
     const uDate = client.mute.get(key, 'unmuteDate');
     const guild = client.guilds.cache.get(client.mute.get(key, 'guild'));
-    if(date >= uDate){
+    if (date >= uDate) {
       guild.members.fetch(client.mute.get(key, 'member')).then(member => {
         member.send(`You have been unmuted in ${guild.name}`);
         member.roles.set(client.mute.get(key, 'roles'));
@@ -31,7 +31,7 @@ module.exports = async (client) => {
     const uDate = client.tempban.get(key, 'unmuteDate');
     const guild = client.guilds.cache.get(client.tempban.get(key, 'guild'));
     const member = client.tempban.get(key, 'member');
-    if(date >= uDate){
+    if (date >= uDate) {
       guild.members.unban(member);
       client.tempban.delete(key);
     } else {
@@ -51,9 +51,9 @@ module.exports = async (client) => {
   });
   client.user.setPresence({ activity: { name: `over ${users} members!`, type: "WATCHING" }, status: 'online' })
   client.channels.cache.get('794844798065311765').setName(`Users: ${users}`);
-  
+
   let cur = 0;
-  client.setInterval(()=>{
+  client.setInterval(() => {
     client.channels.cache.get('785175685625937950').setName(`Guilds: ${client.guilds.cache.size}`);
     let users = 0;
     client.guilds.cache.forEach(g => {
@@ -61,16 +61,17 @@ module.exports = async (client) => {
     });
 
     const presences = [
-      {name: `over ${users} members!`, type: "WATCHING"},
-      {name: `for ${client.commands.size} commands in ${client.guilds.cache.size} servers`, type: "LISTENING"}
+      { name: `over ${users} members!`, type: "WATCHING" },
+      { name: `for ${client.commands.size} commands in ${client.guilds.cache.size} servers`, type: "LISTENING" }
     ]
-    if(cur+1 > presences.length) cur = 0;
+    if (cur + 1 > presences.length) cur = 0;
 
     const presence = presences[cur];
 
     client.user.setPresence({ activity: { name: presence.name, type: presence.type }, status: 'online' });
     cur++
-    client.channels.cache.get('794844798065311765').setName(`Users: ${users}`);}, 1000*15)
+    client.channels.cache.get('794844798065311765').setName(`Users: ${users}`);
+  }, 1000 * 15)
 
-    console.log("READY!")
+  console.log("READY!")
 };
