@@ -43,6 +43,8 @@ client.messages = new Enmap({ name: 'messages' });
 client.queue = new Enmap({ name: 'queue' });
 client.hangman = new Enmap({ name: 'hangman' });
 client.hmstats = new Enmap({ name: 'hmstats' });
+client.warns = new Enmap({ name: 'warns' });
+client.warnsettings = new Enmap({ name: 'warnsettings' })
 //==========================================================//
 client.globaleco = new Enmap({ name: 'globaleco' });
 //==========================================================//

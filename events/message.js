@@ -13,6 +13,14 @@ module.exports = async (client, message) => {
   const wChan = message.guild.channels.cache.find(x => x.name.toLowerCase().includes('welcome')) || '';
   const bChan = message.guild.channels.cache.find(x => x.name.toLowerCase().includes('goodbye')) || '';
 
+  client.warnsettings.ensure(message.guild.id, {
+    mute: 2,
+    kick: 3,
+    ban: 5,
+    muteTime: '15m',
+    banTime: '1d',
+  });
+
   client.botsettings.ensure(message.guild.id, {
     sendLogs: true,
     logChannel: '',
@@ -115,6 +123,9 @@ module.exports = async (client, message) => {
       client.messages.set(k, msDate, 'nextDay');
       client.messages.set(k, 0, 'dailyMessages');
     };
+  });
+  client.warns.ensure(key, {
+    warns: []
   });
   client.miner.ensure(key, {
     miner: 1,
