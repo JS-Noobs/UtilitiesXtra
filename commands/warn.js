@@ -29,7 +29,7 @@ module.exports = {
       const date = new Date()
       const formatted = moment(date).format("MMMM Do YYYY, HH:mm");
       const obj = {
-        caseId: cid;
+        caseId: cid,
         guild: message.guild.id,
         executor: message.member.id,
         reason: args.slice(1).join(' '),
