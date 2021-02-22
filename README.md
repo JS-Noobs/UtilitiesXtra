@@ -20,6 +20,8 @@ nova slayer- Testing new features<br>
 Arc- Providing a server to help test the bot<br>
 ___
 ## Updates
+### Update 1.0.2
+* Removed the length of word from hangman makes it a bit harder
 ### Update 1.0.1
 * Added warn command
 ### Update 1.0.0

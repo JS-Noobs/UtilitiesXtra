@@ -11,6 +11,7 @@ module.exports = {
   development: false,
   ea: false,
   execute(message, args, client) {
+    return;
     function rando() {
       let id = '';
       for(let i = 0; i<15; i++) {
@@ -32,7 +33,7 @@ module.exports = {
         caseId: cid,
         guild: message.guild.id,
         executor: message.member.id,
-        reason: args.slice(1).join(' '),
+        reason: args.slice(2).join(' '),
         time: formatted
       };
       client.warns.push(`${message.guild.id}-${member.id}`, obj, 'warns');

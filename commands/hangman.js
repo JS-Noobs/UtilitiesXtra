@@ -64,7 +64,7 @@ _______
 |
 =======
 
-${points > 5 ? word : `${array.join('\u200a')} -  ${word.length} letters.`}
+${points > 5 ? word : `${array.join('\u200a')}`}
 ${points > 5 ? `About ${parseFloat(winPer)}% users guessed correct.` : ''}
 ${points > 5 ? `About ${parseFloat(losPer)}% users guessed wrong.` : ''}
 ${points > 5 ? `This word has been shown ${total} times` : ''}
@@ -115,7 +115,7 @@ _______
 |
 =======
 
-${array.join('\u200a')} - ${word.length} letters.
+${array.join('\u200a')}
  \`\`\``;
 
       const embed = new MessageEmbed()
