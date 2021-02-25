@@ -10,6 +10,7 @@ module.exports = {
   development: false,
   ea: false,
   execute: async(message, args, client) => {
+    return
     const member = message.mentions.members.first();
     if(client.trading.get(message.guild.id, 'ongoing').some(x => x.starter.id === message.member.id || x.trader.id === member.id)) {
 
