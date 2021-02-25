@@ -46,8 +46,7 @@ module.exports = {
         .setFooter(`Total $${sum}`)
       message.channel.send(embed)
     } else {
-      return
-      const amount = parseInt(args[0]);
+      const amount = parseInt(args[0]) || 1;
       if (!args[1]) return message.channel.send(`Please enter the item name you want to sell`);
       const item = message.content.split(' ').slice(2).join(' ').toLowerCase();
       const items = shop
@@ -55,6 +54,7 @@ module.exports = {
       if (!items.some(x => x.name.toLowerCase() === item)) return message.channel.send(`The shop do not buy any **\u200b${item}**.`);
 
       const inv = client.inventory.get(key, 'items');
+      if(inv.some(x => x.amount < amount)) return message.channel.send(`You don't have enough ${item} to sell`);
       if (!inv.some(x => x.name.toLowerCase() === item || amount > x.amount)) return message.channel.send(`You do not have **${amount} ${item}** to sell`);
 
       const price = parseInt(amount * shop.find(x => x.name.toLowerCase() === item).sell) || 0;
