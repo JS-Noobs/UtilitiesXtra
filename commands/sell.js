@@ -50,7 +50,7 @@ module.exports = {
       const amount = parseInt(args[0]);
       if (!args[1]) return message.channel.send(`Please enter the item name you want to sell`);
       const item = message.content.split(' ').slice(2).join(' ').toLowerCase();
-      const items return
+      const items = shop
 
       if (!items.some(x => x.name.toLowerCase() === item)) return message.channel.send(`The shop do not buy any **\u200b${item}**.`);
 
