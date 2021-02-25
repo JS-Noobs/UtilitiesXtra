@@ -55,7 +55,7 @@ module.exports = {
 
       const inv = client.inventory.get(key, 'items');
       if(inv.some(x => x.amount < amount)) return message.channel.send(`You don't have enough ${item} to sell`);
-      if (!inv.some(x => x.name.toLowerCase() === item || amount > x.amount)) return message.channel.send(`You do not have **${amount} ${item}** to sell`);
+      if (!inv.some(x => x.name.toLowerCase() === item)) return message.channel.send(`You do not have **${amount} ${item}** to sell`);
 
       const price = parseInt(amount * shop.find(x => x.name.toLowerCase() === item).sell) || 0;
       const i = shop.find(x => x.name.toLowerCase() === item);
