@@ -116,7 +116,7 @@ _______
 =======
 
 ${array.join('\u200a')}
- \`\`\``;
+\`\`\``;
 
       const embed = new MessageEmbed()
         .setTitle(`${message.member.displayName}'s hangman`)

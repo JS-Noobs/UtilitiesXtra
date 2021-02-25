@@ -13,6 +13,10 @@ module.exports = async (client, message) => {
   const wChan = message.guild.channels.cache.find(x => x.name.toLowerCase().includes('welcome')) || '';
   const bChan = message.guild.channels.cache.find(x => x.name.toLowerCase().includes('goodbye')) || '';
 
+  client.trading.ensure(message.guild.id, {
+    ongoing: []
+  });
+
   client.warnsettings.ensure(message.guild.id, {
     mute: 2,
     kick: 3,

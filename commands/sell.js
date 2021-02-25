@@ -46,10 +46,11 @@ module.exports = {
         .setFooter(`Total $${sum}`)
       message.channel.send(embed)
     } else {
+      return
       const amount = parseInt(args[0]);
       if (!args[1]) return message.channel.send(`Please enter the item name you want to sell`);
       const item = message.content.split(' ').slice(2).join(' ').toLowerCase();
-      const items = shop
+      const items return
 
       if (!items.some(x => x.name.toLowerCase() === item)) return message.channel.send(`The shop do not buy any **\u200b${item}**.`);
 

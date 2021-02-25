@@ -44,7 +44,8 @@ client.queue = new Enmap({ name: 'queue' });
 client.hangman = new Enmap({ name: 'hangman' });
 client.hmstats = new Enmap({ name: 'hmstats' });
 client.warns = new Enmap({ name: 'warns' });
-client.warnsettings = new Enmap({ name: 'warnsettings' })
+client.warnsettings = new Enmap({ name: 'warnsettings' });
+client.trading = new Enmap({ name: 'trading' });
 //==========================================================//
 client.globaleco = new Enmap({ name: 'globaleco' });
 //==========================================================//
