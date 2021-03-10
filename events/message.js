@@ -57,8 +57,14 @@ module.exports = async (client, message) => {
   });
 
   if (client.votechannels.get(message.guild.id, 'channels').includes(message.channel.id)) {
-    await message.react(client.votechannels.get(message.guild.id, 'yes'));
-    await message.react(client.votechannels.get(message.guild.id, 'no'));
+    const embed = new MessageEmbed()
+    .setTitle(message.member.displayName)
+    .setDescription(message.content)
+    .setFooter(message.member.id)
+    message.delete()
+    const msg = await message.channel.send(embed);
+    await msg.react(client.votechannels.get(message.guild.id, 'yes'));
+    await msg.react(client.votechannels.get(message.guild.id, 'no'));
   };
 
   if (message.author.bot) return;
