@@ -56,6 +56,8 @@ module.exports = async (client, message) => {
     no: '👎'
   });
 
+  if (message.author.bot) return;
+
   if (client.votechannels.get(message.guild.id, 'channels').includes(message.channel.id)) {
     const embed = new MessageEmbed()
     .setTitle(message.member.displayName)
@@ -66,8 +68,6 @@ module.exports = async (client, message) => {
     await msg.react(client.votechannels.get(message.guild.id, 'yes'));
     await msg.react(client.votechannels.get(message.guild.id, 'no'));
   };
-
-  if (message.author.bot) return;
 
   client.globaleco.ensure(message.member.id, {
     money: 0,
