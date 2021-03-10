@@ -17,7 +17,7 @@ router.get('/', function (req, res) {
 });
 app.use('/', router);
 //==========================================================//
-const client = new Discord.Client({ partials: ['REACTION']});
+const client = new Discord.Client({ partials: ['MESSAGE', 'CHANNEL', 'REACTION']});
 //==========================================================//
 client.events = new Discord.Collection();
 client.commands = new Discord.Collection();
