@@ -4,14 +4,14 @@ module.exports = async (client, reaction, user) => {
   if (client.votechannels.get(reaction.message.guild.id, 'channels').includes(reaction.message.channel.id)) {
     const embed = reaction.message.embeds[0];
     const message = reaction.message;
-    const up = message.reactions.cache.find(r => r.emoji.name === '👍').count;
-    const down = message.reactions.cache.find(r => r.emoji.name === '👎').count;
+    const up = message.reactions.cache.find(r => r.emoji.name === '👍');
+    const down = message.reactions.cache.find(r => r.emoji.name === '👎');
     const embed2 = embed;
-    if (up > down) {
+    if (up.count > down.count) {
       embed2.setColor('GREEN')
-    } else if (up === down) {
+    } else if (up.count === down.count) {
       embed2.setColor('ORANGE')
-    } else if (up < down) {
+    } else if (up.count < down.count) {
       embed2.setColor('RED')
     };
     message.edit(embed2);
