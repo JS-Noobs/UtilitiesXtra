@@ -4,11 +4,17 @@ const fs = require('fs');
 module.exports = async (client, member) => {
   console.log('ADDMEMBER')
   const key = member.guild.id;
+  if (client.joinroles.get(member.guild.id, 'enabled') === true) {
+    const roles = client.joinroles.get(member.guild.id, 'roles');
+    console.log(roles)
+    member.roles.add(roles);
+    console.log(true);
+  };
   if (client.botsettings.get(key, 'sendWelcome') === true) {
     const messages = client.botsettings.get(key, 'welcomeMessage');
-    if (messages.length <= 0) break;
+    if (messages.length <= 0) return;
     const channel = client.botsettings.get(key, 'welcomeChannel');
-    if (!channel) break;
+    if (!channel) return;
     const arr = [];
     messages.forEach(x => arr.push(x));
     let message = arr[Math.floor(Math.random() * arr.length)];
@@ -28,11 +34,5 @@ module.exports = async (client, member) => {
 
     const sendChan = client.channels.cache.get(channel);
     sendChan.send(embed);
-  };
-  if (client.joinroles.get(member.guild.id, 'enabled') === true) {
-    const roles = client.joinroles.get(member.guild.id, 'roles');
-    console.log(roles)
-    member.roles.add(roles);
-    console.log(true);
   };
 };
