@@ -3,6 +3,7 @@ module.exports = async (client, reaction, user) => {
   if (user.bot) return;
   if (client.votechannels.get(reaction.message.guild.id, 'channels').includes(reaction.message.channel.id)) {
     const embed = reaction.message.embeds[0];
+    if (embed.footer.text.includes(user.id)) return reaction.users.remove(user.id);
     const message = reaction.message;
     const up = message.reactions.cache.find(r => r.emoji.name === '👍');
     const down = message.reactions.cache.find(r => r.emoji.name === '👎');
@@ -17,9 +18,5 @@ module.exports = async (client, reaction, user) => {
       embed2.setColor('RED')
     };
     message.edit(embed2);
-
-    if (embed.footer.text.includes(user.id)) {
-      reaction.users.remove(user.id);
-    };
   };
 };
