@@ -26,7 +26,7 @@ module.exports = {
       if (!args[1]) return message.channel.send(`Please send the id of the role to remove`);
       const role = message.guild.roles.cache.get(args[1]);
       if (!role) return message.channel.send(`Invalid role was received`);
-      if (!.joinroles.get(message.guild.id, 'roles').includes(role.id)) return message.channel.send(`That role is not an autorole!`);
+      if (!client.joinroles.get(message.guild.id, 'roles').includes(role.id)) return message.channel.send(`That role is not an autorole!`);
       client.joinroles.remove(message.guild.id, role.id, 'roles');
       return message.channel.send(`${role} was removed from autoroles`)
     };
