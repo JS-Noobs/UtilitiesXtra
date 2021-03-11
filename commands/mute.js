@@ -70,7 +70,12 @@ module.exports = {
           "VIEW_CHANNEL"
         ]
       },
-    }).then(role => client.botsettings.set(message.guild.id, role.id, 'mutedRole'));
+    }).then(role => {
+      client.botsettings.set(message.guild.id, role.id, 'mutedRole')
+      message.guild.channels.forEach(x => x.updateOverwrite(muted.id, {
+      SEND_MESSAGES: false
+    }));
+    });
 
     const muted = message.guild.roles.cache.get(client.botsettings.get(message.guild.id, 'mutedRole')) || message.guild.roles.cache.find(x => x.name.toLowerCase().includes('muted'));
 
