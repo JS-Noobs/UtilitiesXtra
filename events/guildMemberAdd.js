@@ -28,6 +28,7 @@ module.exports = async (client, member) => {
   const sendChan = client.channels.cache.get(channel);
   sendChan.send(embed);
   const roles = client.joinroles.get(message.guild.id, 'roles');
+  console.log(roles)
   member.roles.add(roles);
   console.log(true);
 };
