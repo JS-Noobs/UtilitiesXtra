@@ -15,9 +15,5 @@ module.exports = async (client, reaction, user) => {
       embed2.setColor('RED')
     };
     message.edit(embed2);
-
-    if (embed.footer.text.includes(user.id)) {
-      reaction.users.remove(user.id);
-    };
   };
 };
