@@ -63,6 +63,7 @@ module.exports = async (client, message) => {
     .setTitle(message.member.displayName)
     .setDescription(message.content)
     .setFooter(message.member.id)
+    .setColor('ORANGE')
     message.delete()
     const msg = await message.channel.send(embed);
     await msg.react(client.votechannels.get(message.guild.id, 'yes'));
