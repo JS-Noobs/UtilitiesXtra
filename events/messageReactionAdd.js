@@ -3,8 +3,8 @@ module.exports = async (client, reaction, user) => {
   if(user.bot) return;
   const embed = reaction.message.embeds[0];
   const message = reaction.message;
-  const up = message.reactions.cache.filter((s, reaction) => reaction.emoji.name === '👍').size;
-  const down = message.reactions.cache.filter((s, reaction) => reaction.emoji.name === '👎').size;
+  const up = message.reactions.cache.filter((s, r) => r.emoji.name === '👍').size;
+  const down = message.reactions.cache.filter((s, r) => r.emoji.name === '👎').size;
   const embed2 = embed;
   if(up > down) {
     embed2.setColor('GREEN')
