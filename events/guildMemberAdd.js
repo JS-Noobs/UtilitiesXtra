@@ -2,13 +2,10 @@ const set = new Set();
 const { MessageEmbed } = require('discord.js');
 const fs = require('fs');
 module.exports = async (client, member) => {
-  console.log('ADDMEMBER')
   const key = member.guild.id;
   if (client.joinroles.get(member.guild.id, 'enabled') === true) {
     const roles = client.joinroles.get(member.guild.id, 'roles');
-    console.log(roles)
     member.roles.add(roles);
-    console.log(true);
   };
   if (client.botsettings.get(key, 'sendWelcome') === true) {
     const messages = client.botsettings.get(key, 'welcomeMessage');
