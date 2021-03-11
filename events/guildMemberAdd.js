@@ -6,9 +6,9 @@ module.exports = async (client, member) => {
   const key = member.guild.id;
   if (client.botsettings.get(key, 'sendWelcome') === true) {
     const messages = client.botsettings.get(key, 'welcomeMessage');
-    if (messages.length <= 0) return;
+    if (messages.length <= 0) break;
     const channel = client.botsettings.get(key, 'welcomeChannel');
-    if (!channel) return;
+    if (!channel) break;
     const arr = [];
     messages.forEach(x => arr.push(x));
     let message = arr[Math.floor(Math.random() * arr.length)];
