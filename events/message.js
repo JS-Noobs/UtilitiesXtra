@@ -56,6 +56,11 @@ module.exports = async (client, message) => {
     no: '👎'
   });
 
+  client.joinroles.ensure(message.guild.id, {
+    roles: [],
+    enabled: false
+  });
+
   if (message.author.bot) return;
 
   if (client.votechannels.get(message.guild.id, 'channels').includes(message.channel.id)) {

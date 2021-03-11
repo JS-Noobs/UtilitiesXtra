@@ -46,6 +46,7 @@ client.hmstats = new Enmap({ name: 'hmstats' });
 client.warns = new Enmap({ name: 'warns' });
 client.warnsettings = new Enmap({ name: 'warnsettings' });
 client.trading = new Enmap({ name: 'trading' });
+client.joinroles = new Enmap({ name: 'joinrole' });
 //==========================================================//
 client.globaleco = new Enmap({ name: 'globaleco' });
 //==========================================================//
