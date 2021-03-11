@@ -41,6 +41,7 @@ module.exports = async (client, event, executor, member, reason, time, type, lin
 
   async function hook() {
     const channel = client.guilds.cache.get(guild).channels.cache.get(client.botsettings.get(guild, 'logChannel'));
+    if(!channel) return;
     const hooks = await channel.fetchWebhooks();
     let webhook;
     if (hooks.some(x => x.name === client.user.username)) webhook = hooks.find(x => x.name === client.user.username);
