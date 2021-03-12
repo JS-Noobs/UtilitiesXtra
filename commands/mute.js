@@ -7,7 +7,7 @@ module.exports = {
   description: 'Mutes members.',
   category: 'moderation',
   permissions: ['MANAGE_ROLES'],
-  botpermissions: ['MANAGE_ROLES'],
+  botpermissions: ['MANAGE_ROLES','MANAGE_CHANNELS'],
   development: false,
   ea: false,
   execute: async (message, args, client) => {
