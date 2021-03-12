@@ -14,10 +14,12 @@ module.exports = {
       message.channel.updateOverwrite(message.guild.id, {
         SEND_MESSAGES: false
       });
+      message.channel.send(`Channel is now locked.`);
     } else {
       message.channel.updateOverwrite(message.guild.id, {
         SEND_MESSAGES: true
       });
+      message.channel.send(`Channel is now unlocked.`);
     };
   },
 };
