@@ -2,7 +2,7 @@ const { MessageEmbed } = require('discord.js');
 
 module.exports = {
   name: 'lockdown',
-  alias: [],
+  alias: ['lock'],
   description: 'Locks a channel.',
   category: 'moderation',
   permissions: ['MANAGE_CHANNEL'],
