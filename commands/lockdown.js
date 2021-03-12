@@ -10,16 +10,21 @@ module.exports = {
   development: false,
   ea: false,
   execute(message, args, client) {
+    const embed = new MessageEmbed()
     if(message.channel.permissionsFor(message.guild.id).has('SEND_MESSAGES')){
       message.channel.updateOverwrite(message.guild.id, {
         SEND_MESSAGES: false
       });
-      message.channel.send(`Channel is now locked.`);
+      embed.setTitle(`Channel is now locked 🔒`)
+      .setColor('RED')
+      message.channel.send(embed);
     } else {
       message.channel.updateOverwrite(message.guild.id, {
         SEND_MESSAGES: true
       });
-      message.channel.send(`Channel is now unlocked.`);
+      embed.setTitle(`Channel is now unlocked 🔓`)
+      .setColor('GREEN')
+      message.channel.send(embed);
     };
   },
 };
