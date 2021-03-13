@@ -62,7 +62,7 @@ module.exports = {
       guild: message.guild.id
     });
 
-    if (!message.guild.roles.cache.has(client.botsettings.get(message.guild.id, 'mutedRole')) || !message.guild.roles.cache.some(x => x.name.toLowerCase().includes('muted'))) await message.guild.roles.create({
+    if (!message.guild.roles.cache.has(client.botsettings.get(message.guild.id, 'mutedRole'))) await message.guild.roles.create({
       data: {
         name: 'Muted',
         color: 'GRAY',
