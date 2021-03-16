@@ -17,7 +17,7 @@ router.get('/', function (req, res) {
 });
 app.use('/', router);
 //==========================================================//
-const client = new Discord.Client({ partials: ['MESSAGE', 'CHANNEL', 'REACTION']});
+const client = new Discord.Client({ partials: ['MESSAGE', 'CHANNEL', 'REACTION'] });
 //==========================================================//
 client.events = new Discord.Collection();
 client.commands = new Discord.Collection();
@@ -47,6 +47,7 @@ client.warns = new Enmap({ name: 'warns' });
 client.warnsettings = new Enmap({ name: 'warnsettings' });
 client.trading = new Enmap({ name: 'trading' });
 client.joinroles = new Enmap({ name: 'joinrole' });
+client.giveaways = new Enmap({ name: 'giveaways' });
 //==========================================================//
 client.globaleco = new Enmap({ name: 'globaleco' });
 //==========================================================//

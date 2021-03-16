@@ -25,6 +25,10 @@ module.exports = async (client, message) => {
     banTime: '1d',
   });
 
+  client.giveaways.ensure(message.guild.id, {
+    ongoing: []
+  });
+
   client.botsettings.ensure(message.guild.id, {
     sendLogs: true,
     logChannel: '',

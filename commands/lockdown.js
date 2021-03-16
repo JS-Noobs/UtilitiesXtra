@@ -5,8 +5,8 @@ module.exports = {
   alias: ['lock'],
   description: 'Locks a channel.',
   category: 'moderation',
-  permissions: ['MANAGE_CHANNEL'],
-  botpermissions: ['MANAGE_CHANNEL'],
+  permissions: ['MANAGE_CHANNELS'],
+  botpermissions: ['MANAGE_CHANNELS'],
   development: false,
   ea: false,
   execute(message, args, client) {
