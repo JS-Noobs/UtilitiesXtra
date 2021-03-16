@@ -16,7 +16,6 @@ module.exports = {
     if(!args[0]) return message.channel.send(`Please use either the \`start\` or \`end\` option.`);
     if(args[0] === 'start'){
       message.channel.send(`Please send the amount of winners (max ${message.guild.memberCount})`);
-      const am1 = 
     } else if(args[0] === 'end'){
 
     };
