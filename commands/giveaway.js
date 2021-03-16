@@ -11,7 +11,7 @@ module.exports = {
   development: false,
   developer: true,
   ea: false,
-  execute: async(message, args, client) {
+  execute: async(message, args, client) => {
     return
     if(!args[0]) return message.channel.send(`Please use either the \`start\` or \`end\` option.`);
     if(args[0] === 'start'){
