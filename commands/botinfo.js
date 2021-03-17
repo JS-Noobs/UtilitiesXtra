@@ -31,7 +31,7 @@ module.exports = {
       sponsors.push(`[${server.name}](${invite.url})`)
     };
 
-    await addPartner('759577530528694293');
+    await addPartner();
 
     const string = ms(client.uptime)
     const arr = string.split(' ');
