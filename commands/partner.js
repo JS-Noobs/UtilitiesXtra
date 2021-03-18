@@ -17,7 +17,7 @@ module.exports = {
       const botJoined = Date.parse(message.guild.joinedAt);
       const daysNeeded = botJoined >= botAge ? '✅' : ms(botAge - botJoined)
       const embed = new MessageEmbed()
-      setTitle('Partnership requirements')
+      .setTitle('Partnership requirements')
       .addField(`${members} or more members`, membersNeed, true)
       .addField(`Used bot for ${ms(botAge)}`, daysNeeded, true)
       .setFooter('If you meet both of those requirements feel free to apply with the "apply" option')
