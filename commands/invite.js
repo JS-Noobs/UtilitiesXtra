@@ -8,7 +8,7 @@ module.exports = {
   category: 'bot',
   permissions: [],
   botpermissions: [],
-  developer: false,,
+  developer: false,
   execute: async (message, args, client) => {
     const createdInvite = await message.channel.createInvite({maxAge: 0});
     const invite = createdInvite.url
