@@ -7,8 +7,7 @@ module.exports = {
   category: 'bot',
   permissions: [],
   botpermissions: [],
-  development: false,
-  ea: false,
+  developer: false,
   execute(message, args, client) {
     if (!args[0]) return message.channel.send(`Please send a suggestion with the command.`)
     if (client.blocks.get(client.user.id, 'users').includes(message.author.id)) return;

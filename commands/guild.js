@@ -7,9 +7,7 @@ module.exports = {
   category: 'development',
   permissions: [],
   botpermissions: [],
-  development: false,
   developer: false,
-  ea: false,
   execute(message, args, client) {
     const bots = message.guild.members.cache.filter(x => x.user.bot).size;
     const humans = parseInt(message.guild.memberCount - bots);

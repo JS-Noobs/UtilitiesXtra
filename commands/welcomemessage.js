@@ -8,8 +8,7 @@ module.exports = {
   category: 'guildsettings',
   permissions: ['MANAGE_GUILD'],
   botpermissions: [],
-  development: false,
-  ea: false,
+  developer: false,
   execute(message, args, client) {
     if (!args[0]) return message.channel.send(`Please enter one of following options: \`toggle, list, add, remove, channel\``);
     const key = message.guild.id;

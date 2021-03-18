@@ -8,8 +8,8 @@ module.exports = async (client, reaction, user) => {
     const up = message.reactions.cache.find(r => r.emoji.name === '👍');
     const down = message.reactions.cache.find(r => r.emoji.name === '👎');
     const embed2 = embed;
-    if(up.users.cache.has(user.id)) return reaction.users.remove(user.id);
-    if(down.users.cache.has(user.id)) return reaction.users.remove(user.id);
+    if(up.users.cache.has(user.id) && down.users.cache.has(user.id)) return reaction.users.remove(user.id);
+    if(down.users.cache.has(user.id) && up.users.cache.has(user.id)) return reaction.users.remove(user.id);
     if (up.count > down.count) {
       embed2.setColor('GREEN')
     } else if (up.count === down.count) {

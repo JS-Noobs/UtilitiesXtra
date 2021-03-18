@@ -7,8 +7,7 @@ module.exports = {
   category: 'economy',
   permissions: [],
   botpermissions: [],
-  development: false,
-  ea: false,
+  developer: false,
   execute(message, args, client) {
     const total = client.economy.filter(x => x.guild === message.guild.id).array().length;
     if (!args[0] || parseInt(args[0]) === 0 || parseInt(args[0]) === 1) {

@@ -1,6 +1,9 @@
 const shop = require('../shop.json');
 module.exports = async (client) => {
 
+  client.partners.ensure(client.user.id, {
+    partners: []
+  })
   client.warning.forEach(x => x.sent = false)
 
   client.mute.keyArray().forEach(key => {

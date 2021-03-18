@@ -9,9 +9,7 @@ module.exports = {
   category: 'economy',
   permissions: [],
   botpermissions: [],
-  development: false,
   developer: false,
-  ea: false,
   execute(message, args, client) {
     const key = `${message.guild.id}-${message.author.id}`;
     let bonus = 1;

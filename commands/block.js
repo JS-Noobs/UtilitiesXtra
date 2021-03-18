@@ -7,9 +7,7 @@ module.exports = {
   category: 'development',
   permissions: [],
   botpermissions: [],
-  development: true,
   developer: true,
-  ea: false,
   execute(message, args, client) {
     if (!args[0]) return message.channel.send(`Please enter an ID.`)
     const id = args[0];

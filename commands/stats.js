@@ -7,8 +7,7 @@ module.exports = {
   category: 'economy',
   permissions: [],
   botpermissions: [],
-  development: false,
-  ea: false,
+  developer: false,
   execute(message, args, client) {
     const member = message.mentions.members.first() || message.guild.members.cache.get(args[0]) || message.guild.members.cache.find(x => x.displayName.toLowerCase().startsWith(args[0])) || message.guild.members.cache.find(x => x.user.tag.toLowerCase() === args[0]) || message.member;
 

@@ -9,8 +9,7 @@ module.exports = {
   category: 'rpg',
   permissions: [],
   botpermissions: [],
-  development: true,
-  ea: true,
+  developer: false,
   execute(message, args, client) {
     const key = message.guild.id + '-' + message.member.id;
     const stat = client.mkills.get(key, 'monsters');

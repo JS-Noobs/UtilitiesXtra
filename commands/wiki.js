@@ -11,8 +11,7 @@ module.exports = {
   category: 'rpg',
   permissions: [],
   botpermissions: [],
-  development: false,
-  ea: false,
+  developer: false,
   execute(message, args, client) {
     const searchs = ['monster', 'item']
     const key = `${message.guild.id}-${message.author.id}`;

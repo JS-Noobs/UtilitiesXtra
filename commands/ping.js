@@ -7,8 +7,7 @@ module.exports = {
   category: 'bot',
   permissions: [],
   botpermissions: [],
-  development: false,
-  ea: false,
+  developer: false,
   execute: async (message, args, client) => {
     const msg = await message.channel.send(`Pinging...`);
     const ping = await Date.now() - msg.createdAt;

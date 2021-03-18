@@ -7,8 +7,7 @@ module.exports = {
   category: 'economy',
   permissions: [],
   botpermissions: [],
-  development: false,
-  ea: false,
+  developer: false,
   execute: async (message, args, client) => {
     let msg;
     const total = client.economy.filter(x => x.guild === message.guild.id).array().length;

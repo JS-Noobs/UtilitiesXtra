@@ -9,8 +9,7 @@ module.exports = {
   category: 'rpg',
   permissions: [],
   botpermissions: [],
-  development: false,
-  ea: false,
+  developer: false,
   execute(message, args, client) {
     if (!args[0]) return message.channel.send(`Please type what you want to craft\nTo see recipes use the recipes command`)
     const key = `${message.guild.id}-${message.member.id}`;

@@ -9,8 +9,7 @@ module.exports = {
   category: 'economy',
   permissions: [],
   botpermissions: [],
-  development: false,
-  ea: false,
+  developer: false,
   execute(message, args, client) {
     const earn = Math.floor(Math.random() * 50) + 50;
     const key = `${message.guild.id}-${message.member.id}`;

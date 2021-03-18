@@ -11,8 +11,7 @@ module.exports = {
   category: 'misc',
   permissions: [],
   botpermissions: [],
-  development: false,
-  ea: false,
+  developer: false,
   execute: async (message, args, client) => {
     const key = `${message.guild.id}-${message.member.id}`;
     const curDate = new Date()

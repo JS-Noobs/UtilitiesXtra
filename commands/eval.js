@@ -7,9 +7,7 @@ module.exports = {
   category: 'development',
   permissions: [],
   botpermissions: [],
-  development: false,
   developer: true,
-  ea: false,
   execute(message, args, client) {
     require('../upgrades.json')
     const clean = text => {

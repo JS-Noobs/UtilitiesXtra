@@ -9,8 +9,7 @@ module.exports = {
   category: 'economy',
   permissions: [],
   botpermissions: [],
-  development: false,
-  ea: false,
+  developer: false,
   execute(message, args, client) {
     if (!args[0]) return message.channel.send(`Please mention the member you wish to rob.`);
 

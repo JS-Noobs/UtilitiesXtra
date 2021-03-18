@@ -7,8 +7,7 @@ module.exports = {
   category: 'moderation',
   permissions: ['BAN_MEMBERS'],
   botpermissions: ['BAN_MEMBERS'],
-  development: false,
-  ea: false,
+  developer: false,
   execute: async (message, args, client) => {
     if (!args[0]) return message.channel.send(`Please mention a member to ban`);
 

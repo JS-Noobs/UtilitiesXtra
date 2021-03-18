@@ -8,8 +8,7 @@ module.exports = {
   category: 'boteco',
   permissions: [],
   botpermissions: [],
-  development: false,
-  ea: false,
+  developer: false,
   execute(message, args, client) {
     const member = client.users.cache.find(x => x.username === args[0]) || client.users.cache.find(x => x.tag === args[0]) || client.users.cache.get(args[0]) || message.author;
     const key = member.id;

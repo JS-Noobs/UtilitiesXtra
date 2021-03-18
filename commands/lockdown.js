@@ -7,8 +7,7 @@ module.exports = {
   category: 'moderation',
   permissions: ['MANAGE_CHANNELS'],
   botpermissions: ['MANAGE_CHANNELS'],
-  development: false,
-  ea: false,
+  developer: false,
   execute(message, args, client) {
     const embed = new MessageEmbed()
     if(message.channel.permissionsFor(message.guild.id).has('SEND_MESSAGES')){

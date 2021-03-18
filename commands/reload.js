@@ -8,8 +8,6 @@ module.exports = {
   category: 'development',
   permissions: [],
   botpermissions: [],
-  development: true,
-  ea: false,
   developer: true,
   execute(message, args, client) {
     if (!args.length) return message.channel.send(`Mention the command to reload`);

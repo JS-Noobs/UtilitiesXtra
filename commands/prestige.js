@@ -9,8 +9,7 @@ module.exports = {
   category: 'boteco',
   permissions: [],
   botpermissions: [],
-  development: false,
-  ea: false,
+  developer: false,
   execute(message, args, client) {
     const price = 20000;
     const level = 10 * (client.globaleco.get(message.member.id, 'prestige') + 1);

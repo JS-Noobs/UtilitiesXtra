@@ -8,8 +8,7 @@ module.exports = {
   category: 'info',
   permissions: [],
   botpermissions: [],
-  development: false,
-  ea: false,
+  developer: false,
   execute(message, args, client) {
     if (args[0] === 'easter') {
       if (args[1] === 'egg') {
@@ -20,9 +19,7 @@ module.exports = {
 
     let commands = client.commands;
     commands = commands.filter(cmd => message.member.permissions.has(cmd.permissions));
-    commands = commands.filter(cmd => !cmd.development);
     commands = commands.filter(cmd => cmd.category !== 'development');
-    if (!servers.includes(message.guild.id)) commands = commands.filter(cmd => !cmd.ea)
     commands = commands.sort((x, y) => x.name);
 
     let categories = [];

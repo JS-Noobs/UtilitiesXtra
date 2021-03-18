@@ -8,8 +8,7 @@ module.exports = {
   category: 'botsettings',
   permissions: ['MANAGE_GUILD'],
   botpermissions: [],
-  development: false,
-  ea: false,
+  developer: false,
   execute(message, args, client) {
     const key = message.guild.id;
     if (!args[0]) return message.channel.send(`Please input one of the options to see options fefer to "help toggle"`)

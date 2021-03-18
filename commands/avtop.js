@@ -8,8 +8,7 @@ module.exports = {
   category: 'rpg',
   permissions: [],
   botpermissions: [],
-  development: false,
-  ea: false,
+  developer: false,
   execute: async (message, args, client) => {
     const adventures = client.adventure.filter(x => x.guild === message.guild.id).array();
     const adventurers = [];

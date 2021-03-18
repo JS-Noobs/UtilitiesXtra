@@ -8,8 +8,7 @@ module.exports = {
   category: 'botsettings',
   permissions: ['MANAGE_GUILD'],
   botpermissions: [],
-  development: false,
-  ea: false,
+  developer: false,
   execute(message, args, client) {
     const prefix = client.guildsettings.get(message.guild.id, 'prefix');
     if (!args[0]) return message.channel.send(`Usage: ${prefix}setprefix <prefix>`);

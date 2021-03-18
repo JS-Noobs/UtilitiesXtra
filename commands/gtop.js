@@ -7,8 +7,7 @@ module.exports = {
   category: 'boteco',
   permissions: [],
   botpermissions: [],
-  development: false,
-  ea: false,
+  developer: false,
   execute(message, args, client) {
     let msg;
     const total = client.globaleco.array().length;

@@ -9,8 +9,7 @@ module.exports = {
   category: 'rpg',
   permissions: [],
   botpermissions: [],
-  development: false,
-  ea: false,
+  developer: false,
   execute(message, args, client) {
     let incStr = false;
     let incEnd = false;

@@ -7,8 +7,7 @@ module.exports = {
   category: 'misc',
   permissions: [],
   botpermissions: [],
-  development: false,
-  ea: false,
+  developer: false,
   execute: async (message, args, client) => {
     if (args[0] === 'total' || !args[0]) {
       const total = client.messages.filter(x => x.guild === message.guild.id).array().length;

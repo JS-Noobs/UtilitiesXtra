@@ -8,8 +8,7 @@ module.exports = {
   category: 'rpg',
   permissions: [],
   botpermissions: [],
-  development: false,
-  ea: false,
+  developer: false,
   execute: async (message, args, client) => {
     let page = parseInt(args[0]) || 1;
     const total = client.inventory.get(message.guild.id + '-' + message.member.id, 'items').length + 1;

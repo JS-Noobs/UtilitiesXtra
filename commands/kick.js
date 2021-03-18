@@ -7,8 +7,7 @@ module.exports = {
   category: 'moderation',
   permissions: ['KICK_MEMBERS'],
   botpermissions: ['KICK_MEMBERS'],
-  development: false,
-  ea: false,
+  developer: false,
   execute(message, args, client) {
     if (!args[0]) return message.channel.send(`Please mention a member to kick`);
 

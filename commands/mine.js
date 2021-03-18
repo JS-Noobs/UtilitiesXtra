@@ -11,8 +11,7 @@ module.exports = {
   category: 'rpg',
   permissions: [],
   botpermissions: [],
-  development: false,
-  ea: false,
+  developer: false,
   execute: async (message, args, client) => {
     const key = `${message.guild.id}-${message.member.id}`;
     if (!args[0]) return message.channel.send(`Missing 2nd parameter, available options:\n${['`stats`', '`mines`', '`show`', '`go`', '`dig`', '`pickaxe`', '`search`'].join(',\n')}`);

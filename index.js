@@ -48,6 +48,7 @@ client.warnsettings = new Enmap({ name: 'warnsettings' });
 client.trading = new Enmap({ name: 'trading' });
 client.joinroles = new Enmap({ name: 'joinrole' });
 client.giveaways = new Enmap({ name: 'giveaways' });
+client.partners = new Enmap({ name: 'partners' });
 //==========================================================//
 client.globaleco = new Enmap({ name: 'globaleco' });
 //==========================================================//

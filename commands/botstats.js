@@ -12,8 +12,7 @@ module.exports = {
   category: 'bot',
   permissions: [],
   botpermissions: [],
-  development: false,
-  ea: false,
+  developer: false,
   execute: async (message, args, client) => {
     const cpus = os.cpus();
     let cpuUsage

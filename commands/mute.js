@@ -8,8 +8,7 @@ module.exports = {
   category: 'moderation',
   permissions: ['MANAGE_ROLES'],
   botpermissions: ['MANAGE_ROLES','MANAGE_CHANNELS'],
-  development: false,
-  ea: false,
+  developer: false,
   execute: async (message, args, client) => {
     if (!args[0]) return message.channel.send(`Please mention a member to mute`);
 

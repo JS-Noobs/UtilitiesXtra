@@ -8,8 +8,7 @@ module.exports = {
   category: 'bot',
   permissions: [],
   botpermissions: [],
-  development: false,
-  ea: false,
+  developer: false,
   execute: async (message, args, client) => {
     let users = 0; client.guilds.cache.forEach(g => users += g.memberCount);
     const guilds = client.guilds.cache.size;

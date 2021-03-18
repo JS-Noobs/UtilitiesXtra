@@ -291,8 +291,6 @@ module.exports = async (client, message) => {
   if (client.botsettings.get(message.guild.id, 'disabledCategories').includes(message.channel.parentID)) return;
   if (client.botsettings.get(message.guild.id, 'disabledUsers').includes(message.member.id)) return;
 
-  if (cmd.development && !servers.includes(message.guild.id)) return;
-  if (cmd.ea && !servers.includes(message.guild.id)) return;
   if (cmd.developer && !['232466273479426049', '365153135704145920', '327254568239104000'].includes(message.author.id)) return;
 
   if (!message.member.permissions.has(cmd.permissions)) return message.channel.send(`You don't have permissions to execute this command.\n\`\`\`${cmd.permissions.join('\n')}\`\`\``);

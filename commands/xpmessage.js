@@ -8,8 +8,7 @@ module.exports = {
   category: 'guildsettings',
   permissions: ['MANAGE_GUILD'],
   botpermissions: [],
-  development: false,
-  ea: false,
+  developer: false,
   execute(message, args, client) {
     if (!args[0]) return message.channel.send('Please use either `toggle` or `set`.');
     if (args[0] === 'toggle') {

@@ -9,8 +9,7 @@ module.exports = {
   category: 'economy',
   permissions: [],
   botpermissions: [],
-  development: false,
-  ea: false,
+  developer: false,
   execute(message, args, client) {
     let page = parseInt(args[0]) || 1;
     const arr2 = shop;

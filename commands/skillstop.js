@@ -8,8 +8,7 @@ module.exports = {
   category: 'rpg',
   permissions: [],
   botpermissions: [],
-  development: false,
-  ea: false,
+  developer: false,
   execute(message, args, client) {
     const total = client.stats.filter(x => x.guild === message.guild.id).array().length
     const page = parseInt(args[0]) || 1;

@@ -8,8 +8,7 @@ module.exports = {
   category: 'usersettings',
   permissions: [],
   botpermissions: [],
-  development: false,
-  ea: false,
+  developer: false,
   execute(message, args, client) {
     const cur = client.usersettings.get(message.author.id, 'xpping');
     client.usersettings.set(message.author.id, !cur, 'xpping');
