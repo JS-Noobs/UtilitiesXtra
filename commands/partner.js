@@ -15,11 +15,11 @@ module.exports = {
       const members = 100, botAge = Date.parse(message.guild.joinedAt) + 7 * 24 * 60 * 60 * 1000;
       const membersNeed = message.guild.memberCount >= members ? '✅' : members - message.guild.memberCount + ' more members needed';
       const botJoined = Date.parse(message.guild.joinedAt);
-      const daysNeeded = botJoined >= botAge ? '✅' : ms(botAge - botJoined)
+      const daysNeeded = botJoined >= botAge ? '✅' : ms(botAge - botJoined) + ' until reached'
       const embed = new MessageEmbed()
       .setTitle('Partnership requirements')
       .addField(`${members} or more members`, membersNeed, true)
-      .addField(`Used bot for ${ms(botAge)}`, daysNeeded, true)
+      .addField(`Used bot for ${ms(botAge - botJoined)}`, daysNeeded, true)
       .setFooter('If you meet both of those requirements feel free to apply with the "apply" option')
 
       return message.channel.send(embed)
