@@ -5,7 +5,7 @@ module.exports = {
   name: 'setprefix',
   alias: ['prefix'],
   description: 'Sets a custom prefix for the server (default !)',
-  category: 'botsettings',
+  category: 'utilities',
   permissions: ['MANAGE_GUILD'],
   botpermissions: [],
   developer: false,

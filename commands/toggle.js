@@ -5,7 +5,7 @@ module.exports = {
   name: 'toggle',
   alias: [],
   description: 'Toggle between disabling & enabling command/user/channel/category/cmdCategory',
-  category: 'botsettings',
+  category: 'utilities',
   permissions: ['MANAGE_GUILD'],
   botpermissions: [],
   developer: false,

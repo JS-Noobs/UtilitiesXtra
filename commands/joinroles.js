@@ -4,7 +4,7 @@ module.exports = {
   name: 'joinroles',
   alias: ['autorole'],
   description: 'Settings for joinroles.',
-  category: 'guildsettings',
+  category: 'utilities',
   permissions: ['MANAGE_GUILD'],
   botpermissions: [],
   developer: false,

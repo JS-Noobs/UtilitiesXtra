@@ -5,7 +5,7 @@ module.exports = {
   name: 'xpping',
   alias: ['xpp'],
   description: 'Toggle the bot pinging you when you level up, this setting is global.',
-  category: 'usersettings',
+  category: 'utilities',
   permissions: [],
   botpermissions: [],
   developer: false,

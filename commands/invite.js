@@ -5,7 +5,7 @@ module.exports = {
   name: 'invite',
   alias: ['inv'],
   description: 'Shows bot, server and support invite',
-  category: 'bot',
+  category: 'utilities',
   permissions: [],
   botpermissions: [],
   developer: false,

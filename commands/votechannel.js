@@ -5,7 +5,7 @@ module.exports = {
   name: 'vote',
   alias: [],
   description: 'Vote channel settings for setting what channels should be used as voting channels',
-  category: 'guildsettings',
+  category: 'utilities',
   permissions: ['MANAGE_GUILD'],
   botpermissions: [],
   developer: false,
