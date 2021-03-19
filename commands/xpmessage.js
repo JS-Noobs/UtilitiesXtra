@@ -6,7 +6,7 @@ module.exports = {
   alias: ['xpm'],
   description: 'Configuration for the XP system',
   category: 'utilities',
-  permissions: ['MANAGE_GUILD'],
+  permissions: ['MANAGE_GUILDS'],
   botpermissions: [],
   developer: false,
   execute(message, args, client) {
