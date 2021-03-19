@@ -24,7 +24,7 @@ module.exports = {
       .addField(`Role above`, `${above.name} (${above.position})`, true)
       .addField(`Current`, `${role.name} (${role.position})`, true)
       .addField(`Role below`, `${below.name} (${below.position})`, true)
-      .setDescription(`${role.permissions.has('ADMINISTRATOR') ? 'This role has admin permissions' : 'This role does not have admin permissions'}\nThere is ${role.members.size} members with this role ${role.members.cache.has(message.author.id) ? 'You are one of them' : 'You are not one of them'}`)
+      .setDescription(`${role.permissions.has('ADMINISTRATOR') ? 'This role has admin permissions' : 'This role does not have admin permissions'}\nThere is ${role.members.size} members with this role ${role.members.has(message.author.id) ? 'You are one of them' : 'You are not one of them'}`)
 
       return message.channel.send(embed);
     }
