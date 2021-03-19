@@ -6,6 +6,8 @@ const servers = require('../eas.json');
 module.exports = async (client, message) => {
   if (message.channel.type === 'dm') return;
 
+  client.emit('permissions', message);
+
   client.guildsettings.ensure(message.guild.id, {
     prefix: '!'
   });
@@ -51,7 +53,10 @@ module.exports = async (client, message) => {
     mutedRole: '',
     autoRoles: [],
     verification: false,
-    verificationRoles: []
+    verificationRoles: [],
+    modRoles: [],
+    adminRoles: [],
+    lockdownBlacklist: []
   });
 
   client.votechannels.ensure(message.guild.id, {
