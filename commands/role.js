@@ -11,3 +11,6 @@ module.exports = {
   botpermissions: [],
   developer: false,
   execute(message, args, client) {
+
+  },
+};
