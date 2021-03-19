@@ -6,7 +6,7 @@ module.exports = {
   name: 'recipes',
   alias: ['recipe'],
   description: 'Shows the recipes for items',
-  category: 'rpg',
+  category: 'adventuring',
   permissions: [],
   botpermissions: [],
   developer: false,

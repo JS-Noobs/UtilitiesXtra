@@ -5,7 +5,7 @@ module.exports = {
   name: 'skillstop',
   alias: ['skilltop'],
   description: 'Shows servers skill top',
-  category: 'rpg',
+  category: 'adventuring',
   permissions: [],
   botpermissions: [],
   developer: false,

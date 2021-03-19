@@ -5,7 +5,7 @@ module.exports = {
   name: 'partner',
   alias: ['partnership'],
   description: 'Main command for bot partnership',
-  category: 'bot',
+  category: 'misc',
   permissions: ['manage_guild'],
   botpermissions: [],
   developer: false,
@@ -23,6 +23,6 @@ module.exports = {
       .setFooter('If you meet both of those requirements feel free to apply with the "apply" option')
 
       return message.channel.send(embed)
-    }
+    } //To be worked on later (low priority)
   },
 };

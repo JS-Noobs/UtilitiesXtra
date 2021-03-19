@@ -4,7 +4,7 @@ module.exports = {
   name: 'ping',
   alias: [],
   description: 'Shows bot ping and heartbeat',
-  category: 'bot',
+  category: 'misc',
   permissions: [],
   botpermissions: [],
   developer: false,

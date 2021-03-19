@@ -4,7 +4,7 @@ module.exports = {
   name: 'kill',
   alias: [],
   description: 'Kill a member.',
-  category: 'fun',
+  category: 'misc',
   permissions: [],
   botpermissions: [],
   developer: false,

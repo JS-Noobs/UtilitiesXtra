@@ -6,7 +6,7 @@ module.exports = {
   name: 'huntstats',
   alias: ['hunts'],
   description: 'Check your hunting stats',
-  category: 'rpg',
+  category: 'adventuring',
   permissions: [],
   botpermissions: [],
   developer: false,

@@ -4,7 +4,7 @@ module.exports = {
   name: 'globaltop',
   alias: ['gtop'],
   description: 'Shows the global leaderboard',
-  category: 'boteco',
+  category: 'global',
   permissions: [],
   botpermissions: [],
   developer: false,

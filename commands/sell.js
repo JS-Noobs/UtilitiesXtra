@@ -6,7 +6,7 @@ module.exports = {
   name: 'sell',
   alias: [],
   description: 'Sell items from your inventory',
-  category: 'economy',
+  category: 'adventuring',
   permissions: [],
   botpermissions: [],
   developer: false,

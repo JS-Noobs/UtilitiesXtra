@@ -8,7 +8,7 @@ module.exports = {
   name: 'mine',
   alias: ['mining'],
   description: 'Go to the mine and dig!',
-  category: 'rpg',
+  category: 'adventuring',
   permissions: [],
   botpermissions: [],
   developer: false,

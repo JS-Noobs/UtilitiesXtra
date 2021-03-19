@@ -7,8 +7,8 @@ const recipes = require('../recipes.json');
 module.exports = {
   name: 'wiki',
   alias: ['docs'],
-  description: 'Wiki/documentation of the bots rpp',
-  category: 'rpg',
+  description: 'Wiki/documentation of the bots rpg',
+  category: 'misc',
   permissions: [],
   botpermissions: [],
   developer: false,

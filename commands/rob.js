@@ -6,7 +6,7 @@ module.exports = {
   name: 'rob',
   alias: [],
   description: 'Rob a member of their money.',
-  category: 'economy',
+  category: 'adventuring',
   permissions: [],
   botpermissions: [],
   developer: false,

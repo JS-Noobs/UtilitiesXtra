@@ -5,7 +5,7 @@ module.exports = {
   name: 'adventureinfo',
   alias: ['avinfo', 'avi'],
   description: 'Shows your adventuring stats',
-  category: 'rpg',
+  category: 'adventuring',
   permissions: [],
   botpermissions: [],
   developer: false,

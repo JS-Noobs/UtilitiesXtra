@@ -9,7 +9,7 @@ module.exports = {
   name: 'botstats',
   alias: ['bstats'],
   description: 'Check bot statistics',
-  category: 'bot',
+  category: 'information',
   permissions: [],
   botpermissions: [],
   developer: false,

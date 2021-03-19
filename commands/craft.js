@@ -6,7 +6,7 @@ module.exports = {
   name: 'craft',
   alias: ['create'],
   description: 'Craft items for upgrades',
-  category: 'rpg',
+  category: 'adventuring',
   permissions: [],
   botpermissions: [],
   developer: false,

@@ -4,7 +4,7 @@ module.exports = {
   name: 'block',
   alias: [],
   description: 'Block',
-  category: 'development',
+  category: 'developer',
   permissions: [],
   botpermissions: [],
   developer: true,

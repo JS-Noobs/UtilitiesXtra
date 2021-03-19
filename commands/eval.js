@@ -4,7 +4,7 @@ module.exports = {
   name: 'eval',
   alias: [],
   description: 'Eval',
-  category: 'development',
+  category: 'developer',
   permissions: [],
   botpermissions: [],
   developer: true,

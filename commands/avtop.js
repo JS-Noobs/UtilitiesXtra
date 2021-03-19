@@ -5,7 +5,7 @@ module.exports = {
   name: 'adventuretop',
   alias: ['avtop'],
   description: 'Shows the top adventurers',
-  category: 'rpg',
+  category: 'adventuring',
   permissions: [],
   botpermissions: [],
   developer: false,

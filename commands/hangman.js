@@ -4,7 +4,7 @@ module.exports = {
   name: 'hangman',
   alias: ['hm', 'wordguesser'],
   description: 'Start or continue a game of hangman',
-  category: 'fun',
+  category: 'games',
   permissions: [],
   botpermissions: [],
   developer: false,

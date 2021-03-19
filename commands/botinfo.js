@@ -5,7 +5,7 @@ module.exports = {
   name: 'botinfo',
   alias: ['binfo'],
   description: 'Shows bot information',
-  category: 'bot',
+  category: 'information,
   permissions: [],
   botpermissions: [],
   developer: false,

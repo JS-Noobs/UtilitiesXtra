@@ -4,7 +4,7 @@ module.exports = {
   name: 'guild',
   alias: ['server', 'serverinfo', 'info', 'guildinfo'],
   description: 'Shows information about the server',
-  category: 'development',
+  category: 'utilities',
   permissions: [],
   botpermissions: [],
   developer: false,

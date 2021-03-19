@@ -4,7 +4,7 @@ module.exports = {
   name: 'skills',
   alias: ['skill'],
   description: 'Shows your skills',
-  category: 'rpg',
+  category: 'adventuring',
   permissions: [],
   botpermissions: [],
   developer: false,

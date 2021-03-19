@@ -5,7 +5,7 @@ module.exports = {
   name: 'gstats',
   alias: ['ginfo', 'gstatisstics'],
   description: 'Shows your global stats',
-  category: 'boteco',
+  category: 'global',
   permissions: [],
   botpermissions: [],
   developer: false,

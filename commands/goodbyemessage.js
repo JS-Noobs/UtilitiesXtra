@@ -5,7 +5,7 @@ module.exports = {
   name: 'goodbyemessage',
   alias: ['gmsg', 'goodbyesettings', 'gsettings'],
   description: 'Settings for the goodbye message',
-  category: 'guildsettings',
+  category: 'utilities',
   permissions: ['MANAGE_GUILD'],
   botpermissions: [],
   developer: false,

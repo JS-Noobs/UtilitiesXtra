@@ -6,7 +6,7 @@ module.exports = {
   name: 'prestige',
   alias: [],
   description: 'Prestige to next level',
-  category: 'boteco',
+  category: 'global',
   permissions: [],
   botpermissions: [],
   developer: false,

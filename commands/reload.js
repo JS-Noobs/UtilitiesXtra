@@ -5,7 +5,7 @@ module.exports = {
   name: 'reload',
   alias: [],
   description: 'reload',
-  category: 'development',
+  category: 'developer',
   permissions: [],
   botpermissions: [],
   developer: true,

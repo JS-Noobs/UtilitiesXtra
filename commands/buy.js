@@ -6,7 +6,7 @@ module.exports = {
   name: 'buy',
   alias: [],
   description: 'Buy items from the shop.',
-  category: 'economy',
+  category: 'adventuring',
   permissions: [],
   botpermissions: [],
   developer: false,

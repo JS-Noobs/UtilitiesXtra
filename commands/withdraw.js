@@ -4,7 +4,7 @@ module.exports = {
   name: 'withdraw',
   alias: ['with'],
   description: 'Withdraw money from your bank account.',
-  category: 'economy',
+  category: 'adventuring',
   permissions: [],
   botpermissions: [],
   developer: false,

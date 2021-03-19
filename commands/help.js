@@ -5,7 +5,7 @@ module.exports = {
   name: 'help',
   alias: [],
   description: 'Shows the bots commands',
-  category: 'info',
+  category: 'information',
   permissions: [],
   botpermissions: [],
   developer: false,

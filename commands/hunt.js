@@ -6,7 +6,7 @@ module.exports = {
   name: 'hunt',
   alias: [],
   description: 'Go on a hunt',
-  category: 'rpg',
+  category: 'adventuring',
   permissions: [],
   botpermissions: [],
   developer: false,

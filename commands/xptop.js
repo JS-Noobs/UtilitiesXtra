@@ -4,7 +4,7 @@ module.exports = {
   name: 'xptop',
   alias: [],
   description: 'Shows the servers xp leaderboard.',
-  category: 'economy',
+  category: 'adventuring',
   permissions: [],
   botpermissions: [],
   developer: false,

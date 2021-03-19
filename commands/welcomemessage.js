@@ -5,7 +5,7 @@ module.exports = {
   name: 'welcomemessage',
   alias: ['wmsg', 'welcomesettings', 'wsettings'],
   description: 'Settings for the welcome message',
-  category: 'guildsettings',
+  category: 'utilities',
   permissions: ['MANAGE_GUILD'],
   botpermissions: [],
   developer: false,

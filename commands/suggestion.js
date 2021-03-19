@@ -4,7 +4,7 @@ module.exports = {
   name: 'suggestion',
   alias: ['suggest'],
   description: 'Suggest something to be added to the bot',
-  category: 'bot',
+  category: 'misc',
   permissions: [],
   botpermissions: [],
   developer: false,

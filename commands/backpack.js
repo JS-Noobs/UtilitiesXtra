@@ -5,7 +5,7 @@ module.exports = {
   name: 'backpack',
   alias: ['inventory', 'inv', 'bp'],
   description: 'Shows your backpack or upgrade it',
-  category: 'rpg',
+  category: 'adventuring',
   permissions: [],
   botpermissions: [],
   developer: false,

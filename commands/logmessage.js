@@ -5,7 +5,7 @@ module.exports = {
   name: 'logmessage',
   alias: ['lmsg', 'logsettings', 'lsettings'],
   description: 'Settings for the log message',
-  category: 'guildsettings',
+  category: 'utilities',
   permissions: ['MANAGE_GUILD'],
   botpermissions: [],
   developer: false,

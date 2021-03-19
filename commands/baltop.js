@@ -4,7 +4,7 @@ module.exports = {
   name: 'balancetop',
   alias: ['baltop'],
   description: 'Shows the servers economy leaderboard.',
-  category: 'economy',
+  category: 'adventuring',
   permissions: [],
   botpermissions: [],
   developer: false,

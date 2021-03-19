@@ -4,7 +4,7 @@ module.exports = {
   name: 'deposit',
   alias: ['dep'],
   description: 'Deposit money to your bank account.',
-  category: 'economy',
+  category: 'adventuring',
   permissions: [],
   botpermissions: [],
   developer: false,

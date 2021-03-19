@@ -6,8 +6,8 @@ const timeout = new Set();
 module.exports = {
   name: 'adventure',
   alias: ['av'],
-  description: 'Start an adventure',
-  category: 'rpg',
+  description: 'Start a adventure',
+  category: 'adventuring',
   permissions: [],
   botpermissions: [],
   developer: false,

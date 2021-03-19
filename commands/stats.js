@@ -4,7 +4,7 @@ module.exports = {
   name: 'stats',
   alias: ['econ', 'economy', 'balance', 'bal', 'xp', 'experience'],
   description: 'Shows your economy statistics.',
-  category: 'economy',
+  category: 'adventuring',
   permissions: [],
   botpermissions: [],
   developer: false,
