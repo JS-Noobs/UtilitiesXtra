@@ -6,7 +6,7 @@ module.exports = {
   alias: ['partnership'],
   description: 'Main command for bot partnership',
   category: 'misc',
-  permissions: ['manage_guild'],
+  permissions: ['MANAGE_GUILD'],
   botpermissions: [],
   developer: false,
   execute: async (message, args, client) => {
