@@ -12,7 +12,7 @@ module.exports = {
   execute: async (message, args, client) => {
     const mods = client.permissions.get(message.guild.id, 'moderatorRoles'), admins = client.permissions.get(message.guild.id, 'adminRoles');
     if(!args[0]) return message.channel.send(`Please use either \`add\`, \`remove\` or \`view\``);
-    if(args[0] === view){
+    if(args[0] === 'view'){
       const embed = new MessageEmbed()
       .setTitle(`Permission roles`)
       .setColor('BLUE')
