@@ -18,6 +18,7 @@ module.exports = {
       .setColor('BLUE')
       .addField('Moderator roles', mods.length >= 1 ? mods.join('\n') : 'There is no moderator roles set', true)
       .addField('Admin roles', admins.length >= 1 ? admins.join('\n') : 'There is no admin roles set', true)
+      return message.channel.send(embed);
     } else if(args[0] === 'add'){
       if(!args[1]) return message.channel.send(`Please select either \`moderator\` or \`admin\` option to specify what the role should be.`);
       if(!['moderator', 'admin'].includes(args[1])) return message.channel.send(`Please select either \`moderator\` or \`admin\` option to specify what the role should be.`);
