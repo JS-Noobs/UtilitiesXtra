@@ -16,8 +16,8 @@ module.exports = {
       const embed = new MessageEmbed()
       .setTitle(`Permission roles`)
       .setColor('BLUE')
-      .addField('Moderator roles', mods.length >= 1 ? mods.join('\n') : 'There is no moderator roles set', true)
-      .addField('Admin roles', admins.length >= 1 ? admins.join('\n') : 'There is no admin roles set', true)
+      .addField('Moderator roles', mods.length >= 1 ? mods.map(x => message.guild.roles.cache.get(x).name).join('\n') : 'There is no moderator roles set', true)
+      .addField('Admin roles', admins.length >= 1 ? admins.map(x => message.guild.roles.cache.get(x).name).join('\n') : 'There is no admin roles set', true)
       return message.channel.send(embed);
     } else if(args[0] === 'add'){
       if(!args[1]) return message.channel.send(`Please select either \`moderator\` or \`admin\` option to specify what the role should be.`);
