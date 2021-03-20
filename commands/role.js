@@ -27,6 +27,6 @@ module.exports = {
       .setDescription(`${role.permissions.has('ADMINISTRATOR') ? 'This role has admin permissions' : 'This role does not have admin permissions'}\nThere is ${role.members.size} ${role.members.size === 1 ? 'member' : 'members'} with this role, ${role.members.has(message.author.id) ? 'you are one of them' : 'you are not one of them'}`)
 
       return message.channel.send(embed);
-    }
+    };
   },
 };

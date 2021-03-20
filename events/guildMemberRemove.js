@@ -14,8 +14,7 @@ module.exports = async (client, member) => {
   message = message.split('{member}').join(member.user.tag);
   message = message.split('{server}').join(member.guild.name);
   const mc = member.guild.memberCount.toString();
-  if (mc.match(/\d*[1-9]{1}\d{1}/)) message = message.split('{count}').join(mc + 'th')
-  else if (mc.endsWith(1)) message = message.split('{count}').join(mc + 'st');
+  if (mc.endsWith(1)) message = message.split('{count}').join(mc + 'st');
   else if (mc.endsWith(2)) message = message.split('{count}').join(mc + 'nd');
   else if (mc.endsWith(3)) message = message.split('{count}').join(mc + 'rd');
   else message = message.split('{count}').join(mc + 'th');
