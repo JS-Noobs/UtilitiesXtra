@@ -8,98 +8,27 @@ module.exports = async (client, message) => {
 
   client.emit('permissions', message);
 
-  client.guildsettings.ensure(message.guild.id, {
-    prefix: '!'
-  });
-
+  // Welcome channel ensuring
   const wChan = message.guild.channels.cache.find(x => x.name.toLowerCase().includes('welcome')) || '';
+  client.botsettings.set(message.guild.id, wChan, 'welcomeChannel');
+
   const bChan = message.guild.channels.cache.find(x => x.name.toLowerCase().includes('goodbye')) || '';
-
-  client.trading.ensure(message.guild.id, {
-    ongoing: []
-  });
-
-  client.warnsettings.ensure(message.guild.id, {
-    mute: 2,
-    kick: 3,
-    ban: 5,
-    muteTime: '15m',
-    banTime: '1d',
-  });
-
-  client.giveaways.ensure(message.guild.id, {
-    ongoing: []
-  });
-
-  client.botsettings.ensure(message.guild.id, {
-    sendLogs: true,
-    logChannel: '',
-    ignoreRolesLog: [],
-    ignoreChannelsLog: [],
-    ignoreUsersLog: [],
-    sendWelcome: true,
-    welcomeChannel: wChan.id,
-    welcomeMessage: ['Welcome {member} to {server}! You are the {count} member to join!'],
-    sendBye: true,
-    goodbyeChannel: '',
-    goodbyeMessage: ['{member} has left us all alone, there are now only {count} members left.'],
-    xpMessage: true,
-    xpChannel: '',
-    disabledChannels: [],
-    disabledCategories: [],
-    disabledUsers: [],
-    disabledCommands: [],
-    disabledCommandCategories: [],
-    mutedRole: '',
-    autoRoles: [],
-    verification: false,
-    verificationRoles: [],
-    modRoles: [],
-    adminRoles: [],
-    lockdownBlacklist: []
-  });
-
-  client.votechannels.ensure(message.guild.id, {
-    channels: [],
-    yes: '👍',
-    no: '👎'
-  });
-
-  client.joinroles.ensure(message.guild.id, {
-    roles: [],
-    enabled: false
-  });
 
   if (message.author.bot) return;
 
   if (client.votechannels.get(message.guild.id, 'channels').includes(message.channel.id)) {
     const embed = new MessageEmbed()
-    .setTitle(message.member.displayName)
-    .setDescription(message.content)
-    .setFooter(message.member.id)
-    .setColor('ORANGE')
+      .setTitle(message.member.displayName)
+      .setDescription(message.content)
+      .setFooter(message.member.id)
+      .setColor('ORANGE')
     message.delete()
     const msg = await message.channel.send(embed);
     await msg.react(client.votechannels.get(message.guild.id, 'yes'));
     await msg.react(client.votechannels.get(message.guild.id, 'no'));
   };
 
-  client.globaleco.ensure(message.member.id, {
-    money: 0,
-    xp: 0,
-    level: 0,
-    member: message.member.id,
-    uCoins: 0,
-    xpboosts: [],
-    balboosts: [],
-    permxpboost: 1,
-    permbalboost: 1,
-    tempxpboost: 0,
-    tempbalboost: 0,
-    prestige: 0,
-    requiredxp: 750
-  });
-
+  client.globaleco.ensure(message.member.id);
   const xpboost = client.globaleco.get(message.member.id, 'permxpboost') + client.globaleco.get(message.member.id, 'tempxpboost');
   const balboost = client.globaleco.get(message.member.id, 'permbalboost') + client.globaleco.get(message.member.id, 'tempbalboost');
   const gIncXp = Math.floor(Math.random() * ((50 - 25) * xpboost) + 25);
@@ -120,11 +49,10 @@ module.exports = async (client, message) => {
     client.globaleco.inc(message.member.id, 'uCoins')
   };
 
-  client.usersettings.ensure(message.author.id, {
-    xpping: false
-  });
-
   const key = `${message.guild.id}-${message.member.id}`;
+  client.messages.ensure(key);
+  // Updates the client.messages enmap
+  client.messages.update(key, { member: message.member.id, guild: message.guild.id });
   const date = new Date();
   const date2 = new Date();
   date2.setHours(0);
@@ -133,13 +61,6 @@ module.exports = async (client, message) => {
   date2.setMilliseconds(0);
   const nextDay = new Date(date2.setDate(date2.getDate() + 1));
   const msDate = Date.parse(nextDay);
-  client.messages.ensure(key, {
-    total: 0,
-    nextDay: 0,
-    dailyMessages: 0,
-    member: message.member.id,
-    guild: message.guild.id
-  });
   client.messages.inc(key, 'total');
   client.messages.inc(key, 'dailyMessages')
   if (client.messages.get(key, 'nextDay') === 0) client.messages.set(key, msDate, 'nextDay')
@@ -149,87 +70,23 @@ module.exports = async (client, message) => {
       client.messages.set(k, 0, 'dailyMessages');
     };
   });
-  client.warns.ensure(key, {
-    warns: []
-  });
-  client.miner.ensure(key, {
-    miner: 1,
-    totalMiner: 1,
-    pickaxe: 0,
-    totalPickaxe: 0,
-    mine: "",
-    ore: "",
-    xp: 0,
-    totalXp: 0,
-    trolley: [],
-    maxTrolley: 5,
-    mineCoins: 0,
-    skips: 0,
-    skipLevel: 0,
-    oresMined: 0,
-    minedOres: []
-  });
-  client.adventure.ensure(key, {
-    monster: "",
-    level: 0,
-    xp: 0,
-    moneyreward: 0,
-    difficulty: 0,
-    highestLvl: 0,
-    member: message.member.id,
-    guild: message.guild.id,
-    lifes: 3
-  });
-  client.jobs.ensure(key, {
-    job: "",
-    rank: "",
-    pay: 0,
-    nxtPay: 0
-  });
-  client.mkills.ensure(key, {
-    monsters: []
-  });
-  client.kill.ensure(key, {
-    kills: 0,
-    deaths: 0
-  });
-  client.inventory.ensure(key, {
-    level: 1,
-    max: 10,
-    items: []
-  });
-  client.stats.ensure(key, {
-    strength: 0,
-    endurance: 0,
-    stealth: 0,
-    barter: 0,
-    luck: 0,
-    intelligence: 0,
-    mining: 0,
-    guild: message.guild.id,
-    member: message.member.id
-  });
-  client.blocks.ensure(client.user.id, {
-    users: []
-  });
 
-  client.economy.ensure(key, {
-    wallet: 0,
-    bank: 0,
-    total: 0,
-    xp: 0,
-    level: 1,
-    levelInc: 0,
-    member: message.member.id,
-    guild: message.guild.id
-  });
+  client.adventure.ensure(key);
+  // Updates the client.adventure enmap
+  client.adventure.update(key, { member: message.member.id, guild: message.guild.id });
 
+  client.stats.ensure(key);
+  // Updates the client.stats enmap
+  client.stats.update(key, { member: message.member.id, guild: message.guild.id });
   let bonus = 1;
   if (client.stats.get(key, 'luck') >= 1) (client.stats.get(key, 'luck') * 15) / 100 + 1;
 
   const cash = Math.floor((Math.floor(Math.random() * 15) + 20) * bonus);
   const xp = Math.floor(cash * 5);
 
+  client.economy.ensure(key);
+  // Updates the client.economy enmap
+  client.economy.update(key, { member: message.member.id, guild: message.guild.id });
   if (!set.has(key)) {
     client.economy.math(key, '+', cash, 'wallet');
     client.economy.math(key, '+', xp, 'xp');
@@ -276,10 +133,6 @@ module.exports = async (client, message) => {
   const cmd = client.commands.get(command) || client.commands.find(cmd => cmd.alias && cmd.alias.includes(command));
 
   if (!cmd) return;
-
-  client.warning.ensure(message.guild.id, {
-    sent: false
-  });
 
   if (!message.guild.me.permissions.has('EMBED_LINKS') && client.warning.get(message.guild.id, 'sent') === false) {
     message.channel.send('Hey! It seems I don\'t have permissions to send embeds, most of my commands are based on them if you can give me the `Embed Links` that would be lovely!')
