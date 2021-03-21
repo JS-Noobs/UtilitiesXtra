@@ -1,0 +1,9 @@
+data/**
+main/**
+node_modules/**
+eas.json
+.env
+package-lock.json
+package.json
+config.json
+Python-3.8.4/**
