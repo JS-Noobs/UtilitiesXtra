@@ -1,7 +1,12 @@
 const Discord = require('discord.js');
+const fs = require('fs');
+const extensions = fs.readdirSync("./extensions");
+extensions.forEach(ext => {
+  require(`./extensions/${ext}`);
+  console.log(`Loaded extension: ${ext}`)
+});
 const client = new Discord.Client({partials: ['MESSAGE', 'CHANNEL', 'REACTION']});
 const Enmap = require('enmap');
-const fs = require('fs');
 
 client.events = new Discord.Collection();
 client.commands = new Discord.Collection();
@@ -34,7 +39,7 @@ folders.forEach(folder => {
     const command = require(`./commands/${folder}/${file}`);
     client.commands.set(command.name, command);
     curFile++;
-    console.log(`Loaded command ${command.name}`)
+    console.log(`Loaded command ${command.name}.js`)
   });
 });
 
