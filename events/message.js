@@ -3,8 +3,6 @@ const {devs, devGuilds} = require('../config.json')
 module.exports = async (client, message) => {
   if(message.channel.type === 'dm' || message.author.bot) return;
 
-  client.emit('adventures', message);
-
   const prefix = client.settings.get(message.guild.id, 'prefix');
 
   if(!message.content.startsWith(prefix)) return;
@@ -15,6 +13,8 @@ module.exports = async (client, message) => {
   const cmd = client.commands.get(command) || client.commands.find(cmd => cmd.alias && cmd.alias.includes(command));
   if(cmd.developer && !devs.includes(message.author.id)) return;
   if(cmd.development && !devGuilds.includes(message.guild.id)) return;
+  if(cmd.userPermissions && !message.member.permissions.has(cmd.userPermissions)) return message.channel.send(`You don't have permissions to run this command.`);
+  if(cmd.botPermissions && !message.guild.me.permissions.has(cmd.botPermissions)) return message.channel.send(`I don't have permissions to run this command.`);
 
   try {
     cmd.execute(message, args, client);

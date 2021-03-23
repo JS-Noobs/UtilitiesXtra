@@ -7,17 +7,9 @@ client.events = new Discord.Collection();
 client.commands = new Discord.Collection();
 
 client.settings = new Enmap({name: 'settings', autoEnsure: {
-  prefix: '!'
-}});
-
-client.adventures = new Enmap({name: 'adventures', autoEnsure: {
-  guild: '',
-  user: '',
-  xp: 0,
-  level: 1,
-  backpack: [],
-  baseLevel: 1,
-  baseStorage: []
+  prefix: '!',
+  logger: '',
+  logChannel: ''
 }});
 
 fs.readdir("./events/", (err, files) => {
